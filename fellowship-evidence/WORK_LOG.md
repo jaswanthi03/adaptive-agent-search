@@ -11,7 +11,7 @@
 * **Institutional Affiliate:** Humanitarians AI Inc. (Boston, MA; EIN: 33-1984805; E-Verify: 2572255)
 * **Project Name:** Iacon Project / Adaptive Agent Search & Repository Memory
 * **Fellowship Role:** AI Engineer
-* **Project Supervisor:** Dev
+* **Project Supervisor:** Dev shah
 * **Academic Program:** Master of Science in Business Analytics
 * **Agreement Period:** September 4, 2026 – September 30, 2026 (Agreement signed September 9, 2026)
 * **Renewal Period:** October 1, 2026 – October 31, 2026 (Renewal request submitted October 12, 2026)
@@ -24,11 +24,11 @@
 | Reporting Week | Date Range | Contractual Status | Expected Commitment | Actual Hours Worked | Evidentiary Anchor & Primary Milestones |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Week 1** | Sep 04 – Sep 10, 2026 | September Agreement | 20–40 hours/week | 20+ hours — self-reported, retrospectively reconstructed | Executed Agreement (`Sai_Banoth_HaiInc_Agreement_Filled.docx`), role onboarding, RL scope definition |
-| **Week 2** | Sep 11 – Sep 17, 2026 | September Agreement | 20–40 hours/week | 20+ hours — self-reported, retrospectively reconstructed | Gemma open-weights architectures, RLVR literature review, verifiable reward reasoning |
-| **Week 3** | Sep 18 – Sep 24, 2026 | September Agreement | 20–40 hours/week | 20+ hours — self-reported, retrospectively reconstructed | arkenOS runtime installation (DMGs v0.3.1 & v0.3.2), local CLI environment setup |
-| **Week 4** | Sep 25 – Sep 30, 2026 | September Agreement | 20–40 hours/week | 20+ hours — self-reported, retrospectively reconstructed | Chemistry textbook ingestion (1,345 pages), Strategies 1–4, Dev 1-page report, GPU cluster scoping |
-| **Week 5** | Oct 01 – Oct 07, 2026 | October Renewal | 20–40 hours/week | 20+ hours — self-reported, retrospectively reconstructed | Remotion video prototype, Hands-On LLM repo ingestion, REPL build, ripgrep integration, `memory-bin/` build |
-| **Week 6** | Oct 08 – Oct 12, 2026 | October Renewal | 20–40 hours/week | 20+ hours — self-reported, retrospectively reconstructed | Benchmark v2 suite, anchor-selection fix, Pilot 3 verified A/B run (1/4 ON vs 0/4 OFF), Brutalist handoff, GitHub push |
+| **Week 2** | Sep 11 – Sep 17, 2026 | September Agreement | 20–40 hours/week | 20 hours — self-reported, retrospectively reconstructed | Gemma open-weights architectures, RLVR literature review, verifiable reward reasoning |
+| **Week 3** | Sep 18 – Sep 24, 2026 | September Agreement | 20–40 hours/week | 24 hours — self-reported, retrospectively reconstructed | arkenOS runtime installation (DMGs v0.3.1 & v0.3.2), local CLI environment setup |
+| **Week 4** | Sep 25 – Sep 30, 2026 | September Agreement | 20–40 hours/week | 28 hours — self-reported, retrospectively reconstructed | Chemistry textbook ingestion (1,345 pages), Strategies 1–4, Dev 1-page report, GPU cluster scoping |
+| **Week 5** | Oct 01 – Oct 07, 2026 | October Renewal | 20–40 hours/week | 30 hours — self-reported, retrospectively reconstructed | Remotion video prototype, Hands-On LLM repo ingestion, REPL build, ripgrep integration, `memory-bin/` build |
+| **Week 6** | Oct 08 – Oct 12, 2026 | October Renewal | 20–40 hours/week | 10 hours — self-reported, retrospectively reconstructed | Benchmark v2 suite, anchor-selection fix, Pilot 3 verified A/B run (1/4 ON vs 0/4 OFF), Brutalist handoff, GitHub push |
 
 ---
 
