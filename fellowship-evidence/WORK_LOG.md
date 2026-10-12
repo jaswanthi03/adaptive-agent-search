@@ -1,7 +1,7 @@
 # Humanitarians AI Fellowship Work Log
 
 > **Document Status: Retrospectively Reconstructed Record with Fellow Confirmation**  
-> **Notice:** This document is a retrospective work log reconstructed from authenticated filesystem timestamps, Git commit logs, shell histories, and arkenOS agent session transcripts. The fellowship agreement establishes an expected volunteer commitment of **20–40 hours per week**. On October 12, 2026, the fellow formally confirmed having worked at least 20 hours during each of the six reporting periods (September 4 through October 12, 2026). In accordance with institutional reporting standards, these hours are designated as **"20+ hours — self-reported, retrospectively reconstructed"** and are strictly distinguished from independently verified clock-in timesheets, which were not maintained. No arbitrary exact hourly totals have been fabricated.
+> **Notice:** This document is a retrospective work log reconstructed from authenticated filesystem timestamps, Git commit logs, shell histories, and arkenOS agent session transcripts. The fellowship agreement establishes an expected volunteer commitment of **20–40 hours per week**. On October 12, 2026, the fellow formally confirmed the actual hours worked during each of the five active reporting periods (September 11 through October 12, 2026). The initial administrative onboarding window (September 4–10, 2026) is excluded from reporting as no research tasks were assigned during that period. In accordance with institutional reporting standards, confirmed hours are designated as **"self-reported, retrospectively reconstructed"** and are strictly distinguished from independently verified clock-in timesheets, which were not maintained.
 
 ---
 
@@ -19,45 +19,26 @@
 
 ---
 
-## 2. Weekly Hours & Commitment Summary (Sep 4 – Oct 12, 2026)
+## 2. Weekly Hours & Commitment Summary (Sep 11 – Oct 12, 2026)
+
+> *Note on Initial Period (Sep 4 – Sep 10, 2026):* The initial volunteer agreement was entered into on September 9, 2026 (effective retroactive to September 4). Because no research tasks were assigned by supervisors during that initial administrative onboarding window, reporting begins with Week 1 on September 11, 2026.
 
 | Reporting Week | Date Range | Contractual Status | Expected Commitment | Actual Hours Worked | Evidentiary Anchor & Primary Milestones |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Week 1** | Sep 04 – Sep 10, 2026 | September Agreement | 20–40 hours/week | 20+ hours — self-reported, retrospectively reconstructed | Executed Agreement (`Sai_Banoth_HaiInc_Agreement_Filled.docx`), role onboarding, RL scope definition |
-| **Week 2** | Sep 11 – Sep 17, 2026 | September Agreement | 20–40 hours/week | 20 hours — self-reported, retrospectively reconstructed | Gemma open-weights architectures, RLVR literature review, verifiable reward reasoning |
-| **Week 3** | Sep 18 – Sep 24, 2026 | September Agreement | 20–40 hours/week | 24 hours — self-reported, retrospectively reconstructed | arkenOS runtime installation (DMGs v0.3.1 & v0.3.2), local CLI environment setup |
-| **Week 4** | Sep 25 – Sep 30, 2026 | September Agreement | 20–40 hours/week | 28 hours — self-reported, retrospectively reconstructed | Chemistry textbook ingestion (1,345 pages), Strategies 1–4, Dev 1-page report, GPU cluster scoping |
-| **Week 5** | Oct 01 – Oct 07, 2026 | October Renewal | 20–40 hours/week | 30 hours — self-reported, retrospectively reconstructed | Remotion video prototype, Hands-On LLM repo ingestion, REPL build, ripgrep integration, `memory-bin/` build |
-| **Week 6** | Oct 08 – Oct 12, 2026 | October Renewal | 20–40 hours/week | 10 hours — self-reported, retrospectively reconstructed | Benchmark v2 suite, anchor-selection fix, Pilot 3 verified A/B run (1/4 ON vs 0/4 OFF), Brutalist handoff, GitHub push |
+| **Week 1** | Sep 11 – Sep 17, 2026 | September Agreement | 20–40 hours/week | 20 hours — self-reported, retrospectively reconstructed | Gemma open-weights architectures, RLVR literature review, verifiable reward reasoning |
+| **Week 2** | Sep 18 – Sep 24, 2026 | September Agreement | 20–40 hours/week | 24 hours — self-reported, retrospectively reconstructed | arkenOS runtime installation (DMGs v0.3.1 & v0.3.2), local CLI environment setup |
+| **Week 3** | Sep 25 – Sep 30, 2026 | September Agreement | 20–40 hours/week | 28 hours — self-reported, retrospectively reconstructed | Chemistry textbook ingestion (1,345 pages), Strategies 1–4, Dev 1-page report, GPU cluster scoping |
+| **Week 4** | Oct 01 – Oct 07, 2026 | October Renewal | 20–40 hours/week | 30 hours — self-reported, retrospectively reconstructed | Remotion video prototype, Hands-On LLM repo ingestion, REPL build, ripgrep integration, `memory-bin/` build |
+| **Week 5** | Oct 08 – Oct 12, 2026 | October Renewal | 20–40 hours/week | 10 hours — self-reported, retrospectively reconstructed | Benchmark v2 suite, anchor-selection fix, Pilot 3 verified A/B run (1/4 ON vs 0/4 OFF), Brutalist handoff, GitHub push |
 
 ---
 
 ## 3. Detailed Weekly Activity Logs
 
-### Week 1: September 4 – September 10, 2026
-* **Contractual Status:** Within September Agreement (Effective Sep 4, 2026; Executed Sep 9, 2026)
-* **Expected Commitment:** 20–40 hours/week
-* **Actual Hours Worked:** 20+ hours — self-reported, retrospectively reconstructed
-* **Primary Objective:** Fellowship Onboarding, Role Definition, and Research Scoping
-
-#### Activities Performed & Fellow Contributions:
-1. **Agreement Execution & Scoping:** Executed the formal Humanitarians AI Inc. Volunteer/Fellowship Agreement on the Iacon project under supervisor Dev. Defined primary duties: creating and training reinforcement learning (RL) environments using Optimus Agent, executing benchmarking and evaluations, and producing project progress videos using Brutalist.
-2. **Initial Architecture Exploration:** Explored autonomous agent search patterns and potential evaluation substrates for verifiable reasoning tasks.
-
-#### Technical Classification:
-* Exploratory & Administrative Onboarding.
-
-#### Supporting Evidentiary Artifacts:
-* Base agreement PDF: `/Users/jaswanthibanoth/Desktop/Humanitarians_AI_Inc_Base_Volunteer_Agreement.pdf` (Created: 2026-09-04 14:00:31 EDT)
-* Executed agreement DOCX: `/Users/jaswanthibanoth/Downloads/Sai_Banoth_HaiInc_Agreement_Filled.docx` (Created/Modified: 2026-09-09 20:17:25 EDT)
-* Work authorization record: `/Users/jaswanthibanoth/Downloads/EAD.pdf` (Downloaded: 2026-09-04 12:43:17 EDT)
-
----
-
-### Week 2: September 11 – September 17, 2026
+### Week 1: September 11 – September 17, 2026
 * **Contractual Status:** Within September Agreement
 * **Expected Commitment:** 20–40 hours/week
-* **Actual Hours Worked:** 20+ hours — self-reported, retrospectively reconstructed
+* **Actual Hours Worked:** 20 hours — self-reported, retrospectively reconstructed
 * **Primary Objective:** Open-Source LLM Architectures, Gemma Models & RLVR Literature Research
 
 #### Activities Performed & Fellow Contributions:
@@ -73,10 +54,10 @@
 
 ---
 
-### Week 3: September 18 – September 24, 2026
+### Week 2: September 18 – September 24, 2026
 * **Contractual Status:** Within September Agreement
 * **Expected Commitment:** 20–40 hours/week
-* **Actual Hours Worked:** 20+ hours — self-reported, retrospectively reconstructed
+* **Actual Hours Worked:** 24 hours — self-reported, retrospectively reconstructed
 * **Primary Objective:** arkenOS Tooling Setup and Agent Runtime Infrastructure
 
 #### Activities Performed & Fellow Contributions:
@@ -92,10 +73,10 @@
 
 ---
 
-### Week 4: September 25 – September 30, 2026
+### Week 3: September 25 – September 30, 2026
 * **Contractual Status:** Within September Agreement (Agreement expired September 30, 2026)
 * **Expected Commitment:** 20–40 hours/week
-* **Actual Hours Worked:** 20+ hours — self-reported, retrospectively reconstructed
+* **Actual Hours Worked:** 28 hours — self-reported, retrospectively reconstructed
 * **Primary Objective:** Chemistry Textbook Ingestion, Local-to-Global Search Experiments & GPU Scoping
 
 #### Activities Performed & Fellow Contributions:
@@ -106,7 +87,7 @@
    * *Strategy 2 (Local Search First + Pivot Rule):* Targeted search with a 2-failure pivot threshold.
    * *Strategy 3 (Evidence Completeness Verification):* Pausing answer generation to verify macroscopic vs. microscopic completeness.
    * *Strategy 4 (Vocabulary / Synonym Expansion):* Translating colloquial user questions into formal scientific domain phrasing.
-4. **Executive Reporting for Dev:** Authored a condensed 1-page technical summary on September 29 tailored specifically for project supervisor Dev.
+4. **Executive Reporting for Dev Shah:** Authored a condensed 1-page technical summary on September 29 tailored specifically for project supervisor Dev Shah.
 5. **Semantic Concept Graph Search:** Evaluated whether concept graphs could actively guide retrieval for complex chemical equilibrium and reaction spontaneity queries on September 30.
 6. **Hardware Infrastructure Scoping:** Investigated GPU cluster specifications on September 30 (NVIDIA A6000 8×48GB vs. H100 4×80GB, NVLink interconnects, Slurm job scheduling) for distributed training and model hosting.
 
@@ -124,10 +105,10 @@
 
 ---
 
-### Week 5: October 1 – October 7, 2026
+### Week 4: October 1 – October 7, 2026
 * **Contractual Status:** Post-Expiration / Covered under October Renewal Period
 * **Expected Commitment:** 20–40 hours/week
-* **Actual Hours Worked:** 20+ hours — self-reported, retrospectively reconstructed
+* **Actual Hours Worked:** 30 hours — self-reported, retrospectively reconstructed
 * **Primary Objective:** Video Automation Prototype, Codebase REPL, Native ripgrep Integration & `memory-bin/`
 
 #### Activities Performed & Fellow Contributions:
@@ -135,7 +116,7 @@
 2. **Repository Ingestion:** Pivoted from static PDF search to structured software repository search. Cloned `HandsOnLLM/Hands-On-Large-Language-Models` (83 files, 169 headings, 528 notebook cells).
 3. **Adaptive Search REPL:** Constructed `adaptive_search_repl.ipynb` as an interactive execution REPL with JSON-based trace logging (`search_trace_log.json`).
 4. **Native Search Tool Integration:** Evaluated `grep`, `ag`, `fzf`, and native `ripgrep` (`rg` v15.2.0). Integrated native ripgrep into agent tool dispatch for sub-millisecond regex matching across notebook code and markdown cells.
-5. **Supervisor Technical Update:** Synthesized a sharp one-page technical update for Dev on October 5 (<2,000 characters).
+5. **Supervisor Technical Update:** Synthesized a sharp one-page technical update for Dev Shah on October 5 (<2,000 characters).
 6. **Dense Failure Analysis:** Isolated dense keyword failure on Chapter 8 (DSPy, DPO, llama.cpp GGUF), generating `experiment_dense_failure_trace.json`.
 7. **Persistent Memory-Bin Architecture:** Engineered `memory-bin/` on October 7, cleanly separating raw traces (`traces/`) from generalized lessons (`lessons/failure_modes.json`, `search_lessons.md`) and four structured indexes:
    - `heading_structure_index.json`
@@ -158,10 +139,10 @@
 
 ---
 
-### Week 6: October 8 – October 12, 2026
+### Week 5: October 8 – October 12, 2026
 * **Contractual Status:** Post-Expiration / Covered under October Renewal Period
 * **Expected Commitment:** 20–40 hours/week
-* **Actual Hours Worked:** 20+ hours — self-reported, retrospectively reconstructed
+* **Actual Hours Worked:** 10 hours — self-reported, retrospectively reconstructed
 * **Primary Objective:** Verified Benchmark Suite, Anchor Ranking Fix, Pilot 3 Evaluation & Renewal Finalization
 
 #### Activities Performed & Fellow Contributions:
@@ -186,6 +167,8 @@
 * Git Commits:
   - Commit `df9aa2c` (2026-10-12 11:45:33 CDT): Initial research artifacts & benchmark traces
   - Commit `4fab590` (2026-10-12 11:55:23 CDT): Verified progress report & renewal evidence
+  - Commit `9e6db29` (2026-10-12 12:30:14 CDT): Add retrospective fellowship work log, frictional analysis, and evidence audit
+  - Commit `e10edff` (2026-10-12 12:31:37 CDT): Revise project supervisor name and update hours
 * Remote Repository: [https://github.com/jaswanthi03/adaptive-agent-search](https://github.com/jaswanthi03/adaptive-agent-search)
 * Live Session Log: `2026-10-12T17-03-56-335Z_chat_v4_1791824632723_40.jsonl`
 
@@ -195,7 +178,9 @@
 
 * **Fellow Confirmation Date:** October 12, 2026
 * **Confirmation Status:** Confirmed by Sai Jaswanthi Banoth
+* **Project Supervisor:** Dev shah
 * **Accounting Methodology:**
-  1. The fellow confirmed working at least 20 hours per week across all six reporting periods (September 4 – October 12, 2026), satisfying the contractual volunteer agreement threshold of 20–40 hours per week.
-  2. Because automated timecards/timesheets were not maintained, hours are explicitly recorded as "20+ hours — self-reported, retrospectively reconstructed" rather than arbitrary fabricated exact totals (e.g., 23.5 or 31.0 hours).
-  3. Supporting activities remain strictly anchored to verifiable artifacts, Git commit hashes, and persisted session logs.
+  1. The fellow confirmed working the specific recorded hours across all five active reporting periods (September 11 – October 12, 2026): Week 1 (20h), Week 2 (24h), Week 3 (28h), Week 4 (30h), and Week 5 (10h, partial week through October 12).
+  2. The initial administrative period (September 4–10, 2026) was removed as no research tasks were assigned during that onboarding window.
+  3. Because automated timecards/timesheets were not maintained, hours are explicitly recorded as "self-reported, retrospectively reconstructed" to preserve reporting integrity.
+  4. Supporting activities remain strictly anchored to verifiable artifacts, Git commit hashes, and persisted session logs.
