@@ -155,3 +155,14 @@ python3 -c "import json; data = json.load(open('memory-bin/experiments/benchmark
 ```bash
 jupyter notebook adaptive_search_repl.ipynb
 ```
+
+---
+
+## 7. Fellowship Documentation & Retrospective Evidence
+
+As part of the **Humanitarians AI Fellowship**, the complete research history, retrospective work logs, technical bottlenecks, and artifact verification records are cataloged in the [`fellowship-evidence/`](fellowship-evidence/) directory:
+
+* [**Fellowship Work Log (`fellowship-evidence/WORK_LOG.md`)**](fellowship-evidence/WORK_LOG.md): Reconstructed weekly activity log (September 4 – October 12, 2026), contractual commitment details (20–40 hours/week), technical classifications, and evidentiary anchors.
+* [**Frictional Analysis & Bottleneck Log (`fellowship-evidence/FRICTIONAL.md`)**](fellowship-evidence/FRICTIONAL.md): In-depth examination of technical failure modes (video artifact rendering timeouts, code boilerplate starvation, cell-span truncation ceiling, anchor selection traps), benchmark verification analysis, and administrative friction.
+* [**Evidence Audit & Artifact Map (`fellowship-evidence/EVIDENCE.md`)**](fellowship-evidence/EVIDENCE.md): Immutable audit trail linking reported milestones to physical files, Git commits, Optimus session transcripts, and benchmark evaluation proofs (with sensitive personal data redacted).
+
