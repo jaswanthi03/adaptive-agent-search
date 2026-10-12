@@ -1,0 +1,20 @@
+# External testbed repository (cloned separately per reproduction instructions)
+Hands-On-Large-Language-Models/
+
+# Unrelated workspace files
+Chemistry_Atoms_First_no_contents_or_preface.pdf
+
+# Internal arkenOS runtime and agent state
+.optimus/
+.arkenos/
+.playwright-cli/
+
+# Temporary / scratch trace files at root (persisted canonically in memory-bin/traces/)
+search_trace_log.json
+experiment_dense_failure_trace.json
+
+# OS and Python artifacts
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

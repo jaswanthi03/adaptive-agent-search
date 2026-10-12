@@ -1,0 +1,532 @@
+{
+  "memory_off": [
+    {
+      "question_id": "q1_topic_diversity",
+      "condition": "MEMORY_OFF",
+      "question": "In topic modeling representations, how does the pipeline control keyword diversity to prevent redundant topic terms, and what class is used?",
+      "first_search_method": "fuzzy_headings",
+      "first_query": "topic modeling representations",
+      "first_action_success": true,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "fuzzy_headings",
+          "query": "topic modeling representations",
+          "scope": "headings",
+          "hits": [
+            {
+              "heading": "From Text Clustering to Topic Modeling",
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "cell_idx": 20,
+              "score": 0.667
+            },
+            {
+              "heading": "**BERTopic: A Modular Topic Modeling Framework**",
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "cell_idx": 21,
+              "score": 0.667
+            }
+          ],
+          "failed": false
+        },
+        {
+          "action_num": 2,
+          "tool": "view_cell_block",
+          "query": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb: cells 19-26",
+          "scope": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+          "hits": [
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "matched_snippet": "[chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb: Cell 19 (code)]\nimport matplotlib.pyplot as plt\n\n# Plot outliers and non-outliers seperately\nplt.scatter(outliers_df.x, outliers_df.y, alpha=0.05, s=2, c=\"grey\")\nplt.scatter(\n    clusters_df.x, clusters_df.y, c=clusters_df.cluster.asty"
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 0,
+      "index_consulted": null,
+      "index_entry_used": null,
+      "index_accepted": false,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['diversity']; None of required_any tokens found (['maximalmarginalrelevance', 'keybertinspired'])"
+    },
+    {
+      "question_id": "q2_local_reasoning_runtime",
+      "condition": "MEMORY_OFF",
+      "question": "When performing Chain of Thought or Tree of Thought reasoning locally, what library runtime executes the quantized model?",
+      "first_search_method": "fuzzy_headings",
+      "first_query": "performing chain thought",
+      "first_action_success": true,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "fuzzy_headings",
+          "query": "performing chain thought",
+          "scope": "headings",
+          "hits": [
+            {
+              "heading": "Zero-shot Chain-of-Thought",
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "cell_idx": 26,
+              "score": 0.64
+            },
+            {
+              "heading": "Preprocessing Text",
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "cell_idx": 27,
+              "score": 0.476
+            }
+          ],
+          "failed": false
+        },
+        {
+          "action_num": 2,
+          "tool": "view_cell_block",
+          "query": "chapter06/Chapter 6 - Prompt Engineering.ipynb: cells 25-32",
+          "scope": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+          "hits": [
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "matched_snippet": "[chapter06/Chapter 6 - Prompt Engineering.ipynb: Cell 25 (code)]\n# Answering with chain-of-thought\ncot_prompt = [\n    {\"role\": \"user\", \"content\": \"Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?\"},\n    {\"role\": \"assi"
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 0,
+      "index_consulted": null,
+      "index_entry_used": null,
+      "index_accepted": false,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['llama_cpp']"
+    },
+    {
+      "question_id": "q3_multimodal_captioning",
+      "condition": "MEMORY_OFF",
+      "question": "What vision-language architecture is used for image captioning and visual question answering in the multimodal chapter?",
+      "first_search_method": "fuzzy_headings",
+      "first_query": "vision-language architecture used",
+      "first_action_success": false,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "fuzzy_headings",
+          "query": "vision-language architecture used",
+          "scope": "headings",
+          "hits": [],
+          "failed": true
+        },
+        {
+          "action_num": 2,
+          "tool": "ripgrep",
+          "query": "vision-language|architecture",
+          "scope": "all",
+          "hits": [
+            {
+              "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+              "line": 2368,
+              "matched_snippet": "\"- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).\\n\","
+            },
+            {
+              "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+              "line": 2664,
+              "matched_snippet": "\"- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).\\n\","
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 471,
+              "matched_snippet": "\"- The Transformer model's architecture allows for parallelization, enabling faster training and improved performance.\\n\","
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 480,
+              "matched_snippet": "\"- The Transformer model's architecture enables parallelization, resulting in faster training and improved performance.\\n\","
+            },
+            {
+              "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+              "line": 213,
+              "matched_snippet": "\"- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).\\n\","
+            },
+            {
+              "file": "bonus/8_deepseek_r1.md",
+              "line": 13,
+              "matched_snippet": "The architecture is that of a [Mixture-of-Experts](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mixture-of-experts) and with 256 experts (8 activated at a time), quite large:"
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 1,
+      "index_consulted": null,
+      "index_entry_used": null,
+      "index_accepted": false,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['blip-2']; None of required_any tokens found (['captioning', 'visual question answering']); No hits from expected files (['chapter09/Chapter 9 - Multimodal Large Language Models.ipynb'])"
+    },
+    {
+      "question_id": "q4_kv_cache_speedup",
+      "condition": "MEMORY_OFF",
+      "question": "What attention optimization mechanism is implemented to speed up autoregressive token generation by storing past projection tensors?",
+      "first_search_method": "fuzzy_headings",
+      "first_query": "attention optimization mechanism",
+      "first_action_success": true,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "fuzzy_headings",
+          "query": "attention optimization mechanism",
+          "scope": "headings",
+          "hits": [
+            {
+              "heading": "Chapter 12 - Fine-tuning Generation Models",
+              "file": "chapter12/README.md",
+              "cell_idx": 0,
+              "score": 0.459
+            }
+          ],
+          "failed": false
+        },
+        {
+          "action_num": 2,
+          "tool": "ripgrep",
+          "query": "attention|optimization",
+          "scope": "all",
+          "hits": [
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 410,
+              "matched_snippet": "\"{'input_ids': tensor([[49406,   320,  6829,  1629,   530,   518,  2583, 49407]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1]])}\""
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1473,
+              "matched_snippet": "\"          (self_attn): Blip2Attention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1496,
+              "matched_snippet": "\"          (attention): Blip2QFormerAttention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1497,
+              "matched_snippet": "\"            (attention): Blip2QFormerMultiHeadAttention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1509,
+              "matched_snippet": "\"          (crossattention): Blip2QFormerAttention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1510,
+              "matched_snippet": "\"            (attention): Blip2QFormerMultiHeadAttention(\\n\","
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 0,
+      "index_consulted": null,
+      "index_entry_used": null,
+      "index_accepted": false,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['keys and values']; None of required_any tokens found (['caching', 'past_key_values']); No hits from expected files (['chapter03/Chapter 3 - Looking Inside LLMs.ipynb'])"
+    }
+  ],
+  "memory_on": [
+    {
+      "question_id": "q1_topic_diversity",
+      "condition": "MEMORY_ON",
+      "question": "In topic modeling representations, how does the pipeline control keyword diversity to prevent redundant topic terms, and what class is used?",
+      "first_search_method": "ripgrep_adapted_regex",
+      "first_query": "(BERTopic|KeyBERTInspired|Maximal Marginal Relevance|diversity|c-TF-IDF)",
+      "first_action_success": true,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "ripgrep_adapted_regex",
+          "query": "(BERTopic|KeyBERTInspired|Maximal Marginal Relevance|diversity|c-TF-IDF)",
+          "scope": "chapter05",
+          "hits": [
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "line": 50,
+              "matched_snippet": "\"# !pip install bertopic datasets openai datamapplot\""
+            },
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "line": 527,
+              "matched_snippet": "\"## **BERTopic: A Modular Topic Modeling Framework**\""
+            },
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "line": 555,
+              "matched_snippet": "\"2024-04-24 10:38:31,273 - BERTopic - Dimensionality - Fitting the dimensionality reduction algorithm\\n\","
+            },
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "line": 556,
+              "matched_snippet": "\"2024-04-24 10:39:22,540 - BERTopic - Dimensionality - Completed \u2713\\n\","
+            },
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "line": 557,
+              "matched_snippet": "\"2024-04-24 10:39:22,543 - BERTopic - Cluster - Start clustering the reduced embeddings\\n\","
+            },
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "line": 558,
+              "matched_snippet": "\"2024-04-24 10:39:24,548 - BERTopic - Cluster - Completed \u2713\\n\","
+            }
+          ],
+          "failed": false
+        },
+        {
+          "action_num": 2,
+          "tool": "view_cell_block",
+          "query": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb: cells 34-42",
+          "scope": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+          "hits": [
+            {
+              "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+              "matched_snippet": "[chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb: Cell 34 (markdown)]\n### **Visualizations**\n---\n[chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb: Cell 35 (markdown)]\n**Visualize Documents**\n---\n[chapter05/Chapter 5 - Te"
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 0,
+      "index_consulted": "regex_alias_index.json",
+      "index_entry_used": "topic_modeling_diversity",
+      "index_accepted": true,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['diversity']"
+    },
+    {
+      "question_id": "q2_local_reasoning_runtime",
+      "condition": "MEMORY_ON",
+      "question": "When performing Chain of Thought or Tree of Thought reasoning locally, what library runtime executes the quantized model?",
+      "first_search_method": "ripgrep_adapted_regex",
+      "first_query": "(Tree-of-Thought|Chain-of-Thought|Zero-shot Chain-of-Thought|llama_cpp|Llama|GGUF)",
+      "first_action_success": true,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "ripgrep_adapted_regex",
+          "query": "(Tree-of-Thought|Chain-of-Thought|Zero-shot Chain-of-Thought|llama_cpp|Llama|GGUF)",
+          "scope": "chapter06",
+          "hits": [
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 51,
+              "matched_snippet": "\"# !CMAKE_ARGS=\\\"-DLLAMA_CUBLAS=on\\\" pip install llama-cpp-python\""
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 695,
+              "matched_snippet": "\"## Chain-of-Thought: Think Before Answering\\n\""
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 783,
+              "matched_snippet": "\"# Answering with chain-of-thought\\n\","
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 801,
+              "matched_snippet": "\"## Zero-shot Chain-of-Thought\\n\""
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 838,
+              "matched_snippet": "\"# Zero-shot Chain-of-Thought\\n\","
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 854,
+              "matched_snippet": "\"## Tree-of-Thought: Exploring Intermediate Steps\\n\""
+            }
+          ],
+          "failed": false
+        },
+        {
+          "action_num": 2,
+          "tool": "view_cell_block",
+          "query": "chapter06/Chapter 6 - Prompt Engineering.ipynb: cells 20-28",
+          "scope": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+          "hits": [
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "matched_snippet": "[chapter06/Chapter 6 - Prompt Engineering.ipynb: Cell 20 (code)]\n# Create name and slogan for a product\nproduct_prompt = [\n    {\"role\": \"user\", \"content\": \"Create a name and slogan for a chatbot that leverages LLMs.\"}\n]\noutputs = pipe(product_prompt)"
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 0,
+      "index_consulted": "regex_alias_index.json",
+      "index_entry_used": "reasoning_local_models",
+      "index_accepted": true,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['llama_cpp']"
+    },
+    {
+      "question_id": "q3_multimodal_captioning",
+      "condition": "MEMORY_ON",
+      "question": "What vision-language architecture is used for image captioning and visual question answering in the multimodal chapter?",
+      "first_search_method": "fuzzy_headings",
+      "first_query": "vision-language architecture used",
+      "first_action_success": false,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "fuzzy_headings",
+          "query": "vision-language architecture used",
+          "scope": "headings",
+          "hits": [],
+          "failed": true
+        },
+        {
+          "action_num": 2,
+          "tool": "ripgrep",
+          "query": "vision-language|architecture",
+          "scope": "all",
+          "hits": [
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 471,
+              "matched_snippet": "\"- The Transformer model's architecture allows for parallelization, enabling faster training and improved performance.\\n\","
+            },
+            {
+              "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+              "line": 480,
+              "matched_snippet": "\"- The Transformer model's architecture enables parallelization, resulting in faster training and improved performance.\\n\","
+            },
+            {
+              "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+              "line": 2368,
+              "matched_snippet": "\"- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).\\n\","
+            },
+            {
+              "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+              "line": 2664,
+              "matched_snippet": "\"- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).\\n\","
+            },
+            {
+              "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+              "line": 213,
+              "matched_snippet": "\"- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).\\n\","
+            },
+            {
+              "file": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+              "line": 10,
+              "matched_snippet": "\"<i>An extensive look into the transformer architecture of generative LLMs</i>\\n\","
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 1,
+      "index_consulted": null,
+      "index_entry_used": null,
+      "index_accepted": false,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['blip-2']; None of required_any tokens found (['captioning', 'visual question answering']); No hits from expected files (['chapter09/Chapter 9 - Multimodal Large Language Models.ipynb'])"
+    },
+    {
+      "question_id": "q4_kv_cache_speedup",
+      "condition": "MEMORY_ON",
+      "question": "What attention optimization mechanism is implemented to speed up autoregressive token generation by storing past projection tensors?",
+      "first_search_method": "fuzzy_headings",
+      "first_query": "attention optimization mechanism",
+      "first_action_success": true,
+      "actions": [
+        {
+          "action_num": 1,
+          "tool": "fuzzy_headings",
+          "query": "attention optimization mechanism",
+          "scope": "headings",
+          "hits": [
+            {
+              "heading": "Chapter 12 - Fine-tuning Generation Models",
+              "file": "chapter12/README.md",
+              "cell_idx": 0,
+              "score": 0.459
+            }
+          ],
+          "failed": false
+        },
+        {
+          "action_num": 2,
+          "tool": "ripgrep",
+          "query": "attention|optimization",
+          "scope": "all",
+          "hits": [
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 410,
+              "matched_snippet": "\"{'input_ids': tensor([[49406,   320,  6829,  1629,   530,   518,  2583, 49407]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1]])}\""
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1473,
+              "matched_snippet": "\"          (self_attn): Blip2Attention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1496,
+              "matched_snippet": "\"          (attention): Blip2QFormerAttention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1497,
+              "matched_snippet": "\"            (attention): Blip2QFormerMultiHeadAttention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1509,
+              "matched_snippet": "\"          (crossattention): Blip2QFormerAttention(\\n\","
+            },
+            {
+              "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+              "line": 1510,
+              "matched_snippet": "\"            (attention): Blip2QFormerMultiHeadAttention(\\n\","
+            }
+          ],
+          "failed": false
+        }
+      ],
+      "total_actions": 2,
+      "failed_searches": 0,
+      "index_consulted": null,
+      "index_entry_used": null,
+      "index_accepted": false,
+      "index_reused": false,
+      "false_positive_routing": false,
+      "correct_evidence": false,
+      "evaluator_reason": "Missing required tokens: ['keys and values']; None of required_any tokens found (['caching', 'past_key_values']); No hits from expected files (['chapter03/Chapter 3 - Looking Inside LLMs.ipynb'])"
+    }
+  ]
+}

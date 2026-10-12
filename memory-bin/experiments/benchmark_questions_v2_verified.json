@@ -1,0 +1,128 @@
+[
+  {
+    "question_id": "q1_topic_diversity",
+    "question": "In topic modeling representations, how does the pipeline control keyword diversity to prevent redundant topic terms, and what class is used?",
+    "index_expected_to_help": true,
+    "target_chapter": "chapter05",
+    "ground_truth": {
+      "notebook": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "section": "### Maximal Marginal Relevance (Cell 45)",
+      "exact_cell": 46,
+      "exact_answer": "Class: MaximalMarginalRelevance, parameter: diversity=0.5",
+      "code_excerpt": "from bertopic.representation import MaximalMarginalRelevance\nrepresentation_model = MaximalMarginalRelevance(diversity=0.5)"
+    },
+    "expected_evidence": {
+      "required_all": [
+        "diversity",
+        "maximalmarginalrelevance"
+      ],
+      "required_any": [
+        "0.5",
+        "bertopic.representation"
+      ],
+      "expected_files": [
+        "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb"
+      ]
+    },
+    "audit_notes": {
+      "gold_discrepancy_resolved": "Corrected note from diversity=0.8 to diversity=0.5. The repository line 2081 defines diversity=0.5. Removed KeyBERTInspired from required_any because it does not control diversity."
+    }
+  },
+  {
+    "question_id": "q2_local_quantized_runtime",
+    "question": "What library runtime executes the local quantized GGUF model in the prompt engineering chapter?",
+    "index_expected_to_help": true,
+    "target_chapter": "chapter06",
+    "ground_truth": {
+      "notebook": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "section": "## Grammar: Constrained Sampling (Cell 35)",
+      "exact_cell": 37,
+      "exact_answer": "Library: llama-cpp-python / llama_cpp.llama.Llama, model: microsoft/Phi-3-mini-4k-instruct-gguf",
+      "code_excerpt": "from llama_cpp.llama import Llama\nllm = Llama.from_pretrained(repo_id='microsoft/Phi-3-mini-4k-instruct-gguf', filename='Phi-3-mini-4k-instruct-q4.gguf')"
+    },
+    "expected_evidence": {
+      "required_all": [
+        "llama_cpp"
+      ],
+      "required_any": [
+        "gguf",
+        "llama.from_pretrained",
+        "phi-3-mini-4k-instruct-q4.gguf"
+      ],
+      "expected_files": [
+        "chapter06/Chapter 6 - Prompt Engineering.ipynb"
+      ]
+    },
+    "audit_notes": {
+      "gold_discrepancy_resolved": "Decoupled question from CoT/ToT reasoning. In Chapter 6, CoT and ToT (Cells 23-29) run on unquantized HF pipelines, while the quantized GGUF runtime (llama_cpp) is introduced in Cell 37. Requiring both in a localized \u00b13 cell window was structurally impossible."
+    }
+  },
+  {
+    "question_id": "q3_multimodal_captioning",
+    "question": "What vision-language architecture is used for image captioning and visual question answering in the multimodal chapter?",
+    "index_expected_to_help": false,
+    "target_chapter": "chapter09",
+    "ground_truth": {
+      "notebook": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "section": "## BLIP-2 (Cell 21), ### Use Case 1: Image Captioning (Cell 31), ### Use Case 2: Visual Question Answering (Cell 36)",
+      "exact_cells": [
+        21,
+        22,
+        31,
+        36
+      ],
+      "exact_answer": "Architecture: BLIP-2 (Salesforce/blip2-opt-2.7b via Blip2ForConditionalGeneration)",
+      "code_excerpt": "from transformers import AutoProcessor, Blip2ForConditionalGeneration\nblip_processor = AutoProcessor.from_pretrained('Salesforce/blip2-opt-2.7b')"
+    },
+    "expected_evidence": {
+      "required_all": [
+        "blip-2"
+      ],
+      "required_any": [
+        "captioning",
+        "visual question answering",
+        "blip2forconditionalgeneration"
+      ],
+      "expected_files": [
+        "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb"
+      ]
+    },
+    "audit_notes": {
+      "gold_discrepancy_resolved": "Gold specification was confirmed accurate. Added Blip2ForConditionalGeneration as an acceptable required_any token."
+    }
+  },
+  {
+    "question_id": "q4_kv_cache_speedup",
+    "question": "What attention optimization mechanism is implemented to speed up autoregressive token generation by storing past projection tensors?",
+    "index_expected_to_help": false,
+    "target_chapter": "chapter03",
+    "ground_truth": {
+      "notebook": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+      "section": "# Speeding up generation by caching keys and values (Cell 13)",
+      "exact_cells": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "exact_answer": "Mechanism: Key-Value (KV) caching enabled via use_cache=True in model.generate()",
+      "code_excerpt": "generation_output = model.generate(input_ids=input_ids, max_new_tokens=100, use_cache=True)"
+    },
+    "expected_evidence": {
+      "required_all": [
+        "cache"
+      ],
+      "required_any": [
+        "use_cache",
+        "caching",
+        "keys and values"
+      ],
+      "expected_files": [
+        "chapter03/Chapter 3 - Looking Inside LLMs.ipynb"
+      ]
+    },
+    "audit_notes": {
+      "gold_discrepancy_resolved": "Replaced hallucinated token past_key_values with the actual code parameter use_cache. The notebook uses use_cache=True in model.generate(), not low-level past_key_values."
+    }
+  }
+]

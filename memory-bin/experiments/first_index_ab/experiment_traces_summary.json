@@ -1,0 +1,50 @@
+[
+  {
+    "question_id": "q1_topic_diversity",
+    "off_first_tool": "fuzzy_headings",
+    "off_actions": 2,
+    "off_failed": 0,
+    "off_correct": false,
+    "on_first_tool": "ripgrep_adapted_regex",
+    "on_actions": 2,
+    "on_failed": 0,
+    "on_index_used": "topic_modeling_diversity",
+    "on_correct": false
+  },
+  {
+    "question_id": "q2_local_reasoning_runtime",
+    "off_first_tool": "fuzzy_headings",
+    "off_actions": 2,
+    "off_failed": 0,
+    "off_correct": false,
+    "on_first_tool": "ripgrep_adapted_regex",
+    "on_actions": 2,
+    "on_failed": 0,
+    "on_index_used": "reasoning_local_models",
+    "on_correct": false
+  },
+  {
+    "question_id": "q3_multimodal_captioning",
+    "off_first_tool": "fuzzy_headings",
+    "off_actions": 2,
+    "off_failed": 1,
+    "off_correct": false,
+    "on_first_tool": "fuzzy_headings",
+    "on_actions": 2,
+    "on_failed": 1,
+    "on_index_used": "None",
+    "on_correct": false
+  },
+  {
+    "question_id": "q4_kv_cache_speedup",
+    "off_first_tool": "fuzzy_headings",
+    "off_actions": 2,
+    "off_failed": 0,
+    "off_correct": false,
+    "on_first_tool": "fuzzy_headings",
+    "on_actions": 2,
+    "on_failed": 0,
+    "on_index_used": "None",
+    "on_correct": false
+  }
+]

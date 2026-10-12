@@ -1,0 +1,102 @@
+[
+  {
+    "step": 1,
+    "timestamp": "15:54:08",
+    "question": "Where and how does the repository implement conversation summary memory, and what LangChain class is used?",
+    "method": "lexical",
+    "query": "Conversation Summary Memory",
+    "hits_count": 0,
+    "top_files": [],
+    "helped_answer": false,
+    "assessment": "0 hits found. The exact phrase 'Conversation Summary Memory' was not used verbatim in markdown text.",
+    "lesson_learned": "Query was too specific and verbose. Switch to fuzzy heading search with core keywords 'ConversationSummary' to locate the chapter first."
+  },
+  {
+    "step": 2,
+    "timestamp": "15:54:08",
+    "question": "Where and how does the repository implement conversation summary memory, and what LangChain class is used?",
+    "method": "fuzzy_headings",
+    "query": "ConversationSummary",
+    "hits_count": 5,
+    "top_files": [
+      "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Found heading 'ConversationSummary' in chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb (Cell 23).",
+    "lesson_learned": "Now that the target notebook is located, perform a targeted code search or view the cell directly to extract the exact class and parameters."
+  },
+  {
+    "step": 3,
+    "timestamp": "15:54:08",
+    "question": "Where and how does the repository implement conversation summary memory, and what LangChain class is used?",
+    "method": "lexical",
+    "query": "ConversationSummaryMemory",
+    "hits_count": 1,
+    "top_files": [
+      "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Found exact LangChain import and initialization in Chapter 7, cell 24.",
+    "lesson_learned": "Two-stage search (fuzzy heading to find file -> scoped code lexical search) successfully solved the query in 3 steps."
+  },
+  {
+    "step": 4,
+    "timestamp": "15:54:08",
+    "question": "Which chapter discusses Tree-of-Thought reasoning with local models, and what inference runtime is used?",
+    "method": "fuzzy_headings",
+    "query": "Tree-of-Thought",
+    "hits_count": 4,
+    "top_files": [
+      "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "README.md"
+    ],
+    "helped_answer": true,
+    "assessment": "Located heading 'Tree-of-Thought: Exploring Intermediate Steps' in chapter06/Chapter 6 - Prompt Engineering.ipynb.",
+    "lesson_learned": "Target chapter is confirmed (Chapter 6). Search for imports or model loaders in chapter 6 code cells to identify the local inference runtime."
+  },
+  {
+    "step": 5,
+    "timestamp": "15:54:08",
+    "question": "Which chapter discusses Tree-of-Thought reasoning with local models, and what inference runtime is used?",
+    "method": "lexical",
+    "query": "(Llama|llama_cpp|AutoModelForCausalLM|GGUF)",
+    "hits_count": 3,
+    "top_files": [
+      "chapter06/Chapter 6 - Prompt Engineering.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Confirmed that Chapter 6 uses `llama_cpp.Llama` with local quantized GGUF models.",
+    "lesson_learned": "Combining heading identification with scoped regex for model libraries resolved both chapter and runtime immediately."
+  },
+  {
+    "step": 6,
+    "timestamp": "16:34:11",
+    "question": "How does the repository perform unsupervised domain adaptation for text embedding models when no labeled sentence pairs exist? What specific autoencoder architecture and loss class is trained, what specific noise function is applied to damage the text, and what is the default word deletion ratio used?",
+    "method": "fuzzy_headings",
+    "query": "unsupervised",
+    "hits_count": 5,
+    "top_files": [
+      "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "chapter04/Chapter 4 - Text Classification.ipynb",
+      "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Found heading 'Unsupervised Learning' in chapter10/Chapter 10 - Creating Text Embedding Models.ipynb at Cell 66. This immediately anchors the concept to Chapter 10 (Creating Text Embedding Models).",
+    "lesson_learned": "Applying the prior generalization (starting with a core concept fuzzy heading rather than a verbose query) succeeded on Step 1, locating Chapter 10 Cell 66 immediately. Next step: We need both architecture/loss class and the specific noise function & deletion ratio. Rather than guessing code variable names globally, inspect the cells following Cell 66 in Chapter 10 directly."
+  },
+  {
+    "step": 7,
+    "timestamp": "16:34:24",
+    "question": "How does the repository perform unsupervised domain adaptation for text embedding models when no labeled sentence pairs exist? What specific autoencoder architecture and loss class is trained, what specific noise function is applied to damage the text, and what is the default word deletion ratio used?",
+    "method": "view_cell",
+    "query": "chapter10: cells 66-74",
+    "hits_count": 1,
+    "top_files": [
+      "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Extracted complete evidence in 2 total steps: (1) Architecture is TSDAE (Transformer-based Denoising AutoEncoder) using sentence_transformers.losses.DenoisingAutoEncoderLoss with tie_encoder_decoder=True. (2) Noise function is word deletion via DenoisingAutoEncoderDataset.delete. (3) Default word deletion ratio is del_ratio=0.6.",
+    "lesson_learned": "Cross-task structural generalization verified: Bypassing naive full-phrase search and directly combining fuzzy heading anchoring with contiguous cell block inspection reduced required search actions from 4 down to 2."
+  }
+]

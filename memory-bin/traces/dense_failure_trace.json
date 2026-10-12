@@ -1,0 +1,57 @@
+[
+  {
+    "step": 1,
+    "timestamp": "16:05:56",
+    "question": "When comparing dense semantic search against lexical search (BM25), what specific search query does the author use to demonstrate where pure dense retrieval fails, what document did BM25 find that dense retrieval missed, and why did dense retrieval fail?",
+    "method": "lexical",
+    "query": "dense retrieval failure",
+    "hits_count": 0,
+    "top_files": [],
+    "helped_answer": false,
+    "assessment": "Returned 0 hits. The literal phrase 'dense retrieval failure' does not appear in the repository.",
+    "lesson_learned": "Literal phrase 'dense retrieval failure' returned 0 hits because authors rarely use that exact multi-word phrase. Pivot strategy: Use fuzzy heading search for 'dense retrieval' to discover how the author structured the topic."
+  },
+  {
+    "step": 2,
+    "timestamp": "16:05:59",
+    "question": "When comparing dense semantic search against lexical search (BM25), what specific search query does the author use to demonstrate where pure dense retrieval fails, what document did BM25 find that dense retrieval missed, and why did dense retrieval fail?",
+    "method": "fuzzy_headings",
+    "query": "dense retrieval",
+    "hits_count": 5,
+    "top_files": [
+      "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Found relevant section: 'Caveats of Dense Retrieval' in chapter08/Chapter 8 - Semantic Search.ipynb (Cell 18). However, headings only give section titles, not the exact search query, the missed document text, or the explanation.",
+    "lesson_learned": "Heading search successfully isolated the chapter and section: 'Caveats of Dense Retrieval' in Chapter 8 (around cell 22). Action for next step: Rather than searching globally, restrict the search scope strictly to Chapter 8. Specifically, search for BM25 search calls or inspect cell 22 and its neighboring cells directly."
+  },
+  {
+    "step": 3,
+    "timestamp": "16:06:07",
+    "question": "When comparing dense semantic search against lexical search (BM25), what specific search query does the author use to demonstrate where pure dense retrieval fails, what document did BM25 find that dense retrieval missed, and why did dense retrieval fail?",
+    "method": "lexical",
+    "query": "bm25",
+    "hits_count": 5,
+    "top_files": [
+      "chapter08/Chapter 8 - Semantic Search.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Lexical search for 'bm25' identified that BM25 is executed in cell 16 and cell 23. However, snippet extracts alone do not show which specific query demonstrated the failure mode, what document was returned, or why dense retrieval failed.",
+    "lesson_learned": "Searching for code identifiers ('bm25') surfaced the mechanics, but missed the narrative comparison. From Step 2, we know the exact heading 'Caveats of Dense Retrieval' is at cell 18. Action for next step: Directly inspect cell 18 and its immediate adjacent cells (cells 18 to 21) using view_cell to retrieve the author's explanation, the query used, and the comparison output."
+  },
+  {
+    "step": 4,
+    "timestamp": "16:06:29",
+    "question": "When comparing dense semantic search against lexical search (BM25), what specific search query does the author use to demonstrate where pure dense retrieval fails, what document did BM25 find that dense retrieval missed, and why did dense retrieval fail?",
+    "method": "view_cell",
+    "query": "chapter08: cells 18-19",
+    "hits_count": 1,
+    "top_files": [
+      "chapter08/Chapter 8 - Semantic Search.ipynb"
+    ],
+    "helped_answer": true,
+    "assessment": "Found the exact caveat query: 'What is the mass of the moon?' in Cell 19. Dense search over the 15 Interstellar movie passages returned irrelevant cinematography and box office passages because k-NN search always returns the closest vectors even if completely irrelevant.",
+    "lesson_learned": "Hierarchical search workflow verified: (1) Fuzzy headings to locate chapter/section -> (2) Scoped code/markdown search to locate execution -> (3) View cell neighborhood to extract full narrative and outputs. Avoids repeating broad failed queries."
+  }
+]

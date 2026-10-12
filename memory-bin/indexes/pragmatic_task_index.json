@@ -1,0 +1,287 @@
+{
+  "index_name": "Pragmatic Task & Workflow Index",
+  "version": "1.0",
+  "created_at": "2026-10-07T16:06:44.101582",
+  "purpose": "Maps real-world researcher goals and practical engineering workflows to contiguous notebook cell spans, inputs, outputs, and key classes.",
+  "failure_motivation": "Motivated by the finding in Chapter 8 and Chapter 10 that searching for isolated code tokens ('bm25', 'del_ratio') returns fragmented mechanics without narrative context or parameters. In Jupyter notebooks, code is written as sequential pipelines. Mapping user tasks to contiguous cell blocks allows an agent to resolve multi-variable questions in a single inspection.",
+  "tasks": [
+    {
+      "task_id": "evaluate_retrieval_failure_modes",
+      "goal": "Compare lexical (BM25) vs dense retrieval failure modes and apply neural reranking",
+      "chapter": "chapter08",
+      "primary_notebook": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "contiguous_cell_range": [
+        11,
+        24
+      ],
+      "workflow_stages": [
+        {
+          "stage": "1. Dense Search Setup",
+          "cells": [
+            10,
+            11,
+            12,
+            13
+          ],
+          "key_code": "faiss.IndexFlatL2, co.embed"
+        },
+        {
+          "stage": "2. BM25 Lexical Setup",
+          "cells": [
+            14,
+            15,
+            16,
+            17
+          ],
+          "key_code": "BM25Okapi(tokenized_corpus)"
+        },
+        {
+          "stage": "3. Failure Mode Caveats",
+          "cells": [
+            18,
+            19
+          ],
+          "key_code": "query = 'What is the mass of the moon?'"
+        },
+        {
+          "stage": "4. Cohere Reranking Fix",
+          "cells": [
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "key_code": "co.rerank(query, documents=texts)"
+        }
+      ],
+      "key_finding": "Dense retrieval k-NN lacks rejection cutoff and returns false positives on out-of-domain queries; BM25 gives 0 score and reranking calibrates relevance."
+    },
+    {
+      "task_id": "unsupervised_domain_adaptation_embeddings",
+      "goal": "Train an embedding model on unlabelled domain text using denoising autoencoding (TSDAE)",
+      "chapter": "chapter10",
+      "primary_notebook": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "contiguous_cell_range": [
+        66,
+        75
+      ],
+      "workflow_stages": [
+        {
+          "stage": "1. Architecture & Concept",
+          "cells": [
+            66,
+            67,
+            68
+          ],
+          "key_code": "TSDAE encoder-decoder with tied weights"
+        },
+        {
+          "stage": "2. Data & Noise Prep",
+          "cells": [
+            69,
+            70,
+            71
+          ],
+          "key_code": "DenoisingAutoEncoderDataset.delete(del_ratio=0.6)"
+        },
+        {
+          "stage": "3. Evaluator Setup",
+          "cells": [
+            72
+          ],
+          "key_code": "EmbeddingSimilarityEvaluator (STSb)"
+        },
+        {
+          "stage": "4. Loss & Trainer",
+          "cells": [
+            73,
+            74,
+            75
+          ],
+          "key_code": "losses.DenoisingAutoEncoderLoss(tie_encoder_decoder=True)"
+        }
+      ],
+      "key_finding": "Encoder embeds damaged sentence, decoder reconstructs original text; default word deletion ratio is 0.6."
+    },
+    {
+      "task_id": "stateful_conversation_memory",
+      "goal": "Equip LLM pipelines with conversation buffer, sliding window, or summarized memory",
+      "chapter": "chapter07",
+      "primary_notebook": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "contiguous_cell_range": [
+        17,
+        26
+      ],
+      "workflow_stages": [
+        {
+          "stage": "1. Verbatim Buffer",
+          "cells": [
+            18,
+            19,
+            20
+          ],
+          "key_code": "ConversationBufferMemory(memory_key='chat_history')"
+        },
+        {
+          "stage": "2. Window Buffer",
+          "cells": [
+            21,
+            22
+          ],
+          "key_code": "ConversationBufferWindowMemory(k=2)"
+        },
+        {
+          "stage": "3. Summary Memory",
+          "cells": [
+            23,
+            24,
+            25,
+            26
+          ],
+          "key_code": "ConversationSummaryMemory(llm=openai_llm)"
+        }
+      ],
+      "key_finding": "Buffer keeps all text (context explosion); window limits to last k turns; summary compresses history with an LLM."
+    },
+    {
+      "task_id": "local_reasoning_and_grammars",
+      "goal": "Run local quantized reasoning models with Chain-of-Thought, Tree-of-Thought, and GBNF grammars",
+      "chapter": "chapter06",
+      "primary_notebook": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "contiguous_cell_range": [
+        18,
+        38
+      ],
+      "workflow_stages": [
+        {
+          "stage": "1. In-Context Learning",
+          "cells": [
+            18,
+            19,
+            20
+          ],
+          "key_code": "Few-shot prompt formatting"
+        },
+        {
+          "stage": "2. Chain-of-Thought (CoT)",
+          "cells": [
+            21,
+            22,
+            23
+          ],
+          "key_code": "Zero-shot CoT ('think step by step')"
+        },
+        {
+          "stage": "3. Tree-of-Thought (ToT)",
+          "cells": [
+            24,
+            25,
+            26
+          ],
+          "key_code": "Exploring intermediate branches"
+        },
+        {
+          "stage": "4. Constrained Grammars",
+          "cells": [
+            27,
+            28,
+            29
+          ],
+          "key_code": "llama_cpp.LlamaGrammar(GBNF syntax)"
+        }
+      ],
+      "key_finding": "Reasoning is steered by prompt structure and intermediate scratchpads, while output syntax is guaranteed by constrained grammar decoding."
+    },
+    {
+      "task_id": "topic_discovery_bertopic",
+      "goal": "Cluster unlabelled text and generate diverse topic representations using BERTopic",
+      "chapter": "chapter05",
+      "primary_notebook": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "contiguous_cell_range": [
+        15,
+        45
+      ],
+      "workflow_stages": [
+        {
+          "stage": "1. Embeddings & UMAP",
+          "cells": [
+            15,
+            20
+          ],
+          "key_code": "sentence_transformers -> umap.UMAP"
+        },
+        {
+          "stage": "2. HDBSCAN Density Clustering",
+          "cells": [
+            21,
+            28
+          ],
+          "key_code": "hdbscan.HDBSCAN(min_cluster_size=15)"
+        },
+        {
+          "stage": "3. c-TF-IDF Representation",
+          "cells": [
+            29,
+            35
+          ],
+          "key_code": "Class-based TF-IDF topic keyword extraction"
+        },
+        {
+          "stage": "4. KeyBERT & MMR Diversity",
+          "cells": [
+            36,
+            42
+          ],
+          "key_code": "KeyBERTInspired(), MaximalMarginalRelevance(diversity=0.8)"
+        }
+      ],
+      "key_finding": "BERTopic is a modular 5-step pipeline; MaximalMarginalRelevance controls keyword diversity to remove duplicate topic terms."
+    },
+    {
+      "task_id": "peft_lora_fine_tuning",
+      "goal": "Fine-tune open generative LLMs efficiently using QLoRA and SFTTrainer",
+      "chapter": "chapter12",
+      "primary_notebook": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "contiguous_cell_range": [
+        3,
+        20
+      ],
+      "workflow_stages": [
+        {
+          "stage": "1. Data Prep & Chat Template",
+          "cells": [
+            3,
+            6
+          ],
+          "key_code": "Dataset formatting with prompt/response columns"
+        },
+        {
+          "stage": "2. 4-bit Quantization Config",
+          "cells": [
+            7,
+            9
+          ],
+          "key_code": "BitsAndBytesConfig(load_in_4bit=True)"
+        },
+        {
+          "stage": "3. LoRA Adapter Config",
+          "cells": [
+            10,
+            12
+          ],
+          "key_code": "LoraConfig(r=16, lora_alpha=32, target_modules=[...])"
+        },
+        {
+          "stage": "4. Training & Merge",
+          "cells": [
+            13,
+            18
+          ],
+          "key_code": "trl.SFTTrainer, model.merge_and_unload()"
+        }
+      ],
+      "key_finding": "QLoRA freezes 4-bit base weights and only updates low-rank adapter matrices, drastically reducing GPU VRAM requirements."
+    }
+  ]
+}

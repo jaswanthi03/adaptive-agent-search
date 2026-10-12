@@ -1,0 +1,1024 @@
+{
+  "index_name": "Heading & Structural Hierarchy Index",
+  "version": "1.0",
+  "created_at": "2026-10-07T16:06:44.099198",
+  "purpose": "Provides a direct hierarchical map of all chapters, sections, and subsections to file paths and cell numbers.",
+  "failure_motivation": "Motivated by Step 1 failure in Chapter 8 ('dense retrieval failure' -> 0 hits) and Chapter 7 ('Conversation Summary Memory' -> 0 hits). In technical repositories and notebooks, authors organize concepts into hierarchical headings rather than repeating topic phrases in cell prose. Searching headings first anchors the exact chapter and cell before reading code.",
+  "total_headings": 169,
+  "headings": [
+    {
+      "heading": "Quick start",
+      "level": 2,
+      "file": ".setup/README.md",
+      "cell_idx": 7
+    },
+    {
+      "heading": "Local Environment with Conda",
+      "level": 1,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 2
+    },
+    {
+      "heading": "1. Installing Miniconda",
+      "level": 2,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 6
+    },
+    {
+      "heading": "2. Setting up a Conda Environment",
+      "level": 2,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 18
+    },
+    {
+      "heading": "2. Installing Dependencies",
+      "level": 2,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 32
+    },
+    {
+      "heading": "[OPTIONAL] Installing dependencies with conda",
+      "level": 3,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 63
+    },
+    {
+      "heading": "Install BERTopic and annoy through conda to prevent additional C++ installations",
+      "level": 1,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 74
+    },
+    {
+      "heading": "conda config --add channels conda-forge",
+      "level": 1,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 75
+    },
+    {
+      "heading": "3. Installing PyTorch",
+      "level": 2,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 82
+    },
+    {
+      "heading": "4. Starting Jupyter Lab",
+      "level": 2,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 99
+    },
+    {
+      "heading": "Get the path to the current conda environment",
+      "level": 1,
+      "file": ".setup/conda/README.md",
+      "cell_idx": 133
+    },
+    {
+      "heading": "Installing Microsoft Visual C++ 14.0",
+      "level": 1,
+      "file": ".setup/conda/common_issues.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "Table of Contents",
+      "level": 2,
+      "file": "README.md",
+      "cell_idx": 25
+    },
+    {
+      "heading": "Reviews",
+      "level": 2,
+      "file": "README.md",
+      "cell_idx": 50
+    },
+    {
+      "heading": "[Bonus content!](bonus/)",
+      "level": 2,
+      "file": "README.md",
+      "cell_idx": 82
+    },
+    {
+      "heading": "Citation",
+      "level": 2,
+      "file": "README.md",
+      "cell_idx": 94
+    },
+    {
+      "heading": "What you'll learn",
+      "level": 2,
+      "file": "bonus/2_deeplearningai.md",
+      "cell_idx": 8
+    },
+    {
+      "heading": "[A Visual Guide to Quantization](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-quantization) (Extends Chapters 7 and 12)",
+      "level": 1,
+      "file": "bonus/3_quantization.md",
+      "cell_idx": 4
+    },
+    {
+      "heading": "[A Visual Guide to Mamba](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mamba-and-state) (An \"Alternative\" Chapter 3)",
+      "level": 1,
+      "file": "bonus/4_mamba.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[A Visual Guide to Mixture of Experts](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mixture-of-experts) (Extends Chapter 3)",
+      "level": 1,
+      "file": "bonus/5_mixture_of_experts.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[The Illustrated Stable Diffusion](https://jalammar.github.io/illustrated-stable-diffusion/) (Extends Chapters 9)",
+      "level": 1,
+      "file": "bonus/6_stable_diffusion.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[A Visual Guide to Reasoning LLMs](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-reasoning-llms) (Extends Chapters 6 and 12)",
+      "level": 1,
+      "file": "bonus/7_reasoning_llms.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[The Illustrated DeepSeek-R1](https://newsletter.languagemodels.co/p/the-illustrated-deepseek-r1/) (Extends Chapters 12)",
+      "level": 1,
+      "file": "bonus/8_deepseek_r1.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[A Visual Guide to LLM Agents](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-reasoning-llms) (Extends Chapters 7 and 8)",
+      "level": 1,
+      "file": "bonus/9_agents.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter01/Chapter 1 - Introduction to Language Models.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Phi-3",
+      "level": 1,
+      "file": "chapter01/Chapter 1 - Introduction to Language Models.ipynb",
+      "cell_idx": 4
+    },
+    {
+      "heading": "Chapter 1 - Introduction to Language Models",
+      "level": 1,
+      "file": "chapter01/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Downloading and Running An LLM",
+      "level": 1,
+      "file": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "Comparing Trained LLM Tokenizers",
+      "level": 1,
+      "file": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "cell_idx": 10
+    },
+    {
+      "heading": "Contextualized Word Embeddings From a Language Model (Like BERT)",
+      "level": 1,
+      "file": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "cell_idx": 21
+    },
+    {
+      "heading": "Text Embeddings (For Sentences and Whole Documents)",
+      "level": 1,
+      "file": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "cell_idx": 26
+    },
+    {
+      "heading": "Word Embeddings Beyond LLMs",
+      "level": 1,
+      "file": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "cell_idx": 29
+    },
+    {
+      "heading": "Recommending songs by embeddings",
+      "level": 1,
+      "file": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "cell_idx": 32
+    },
+    {
+      "heading": "Chapter 2 - Tokens and Embeddings",
+      "level": 1,
+      "file": "chapter02/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Loading the LLM",
+      "level": 1,
+      "file": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "The Inputs and Outputs of a Trained Transformer LLM",
+      "level": 1,
+      "file": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+      "cell_idx": 5
+    },
+    {
+      "heading": "Choosing a single token from the probability distribution (sampling / decoding)",
+      "level": 1,
+      "file": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+      "cell_idx": 8
+    },
+    {
+      "heading": "Speeding up generation by caching keys and values",
+      "level": 1,
+      "file": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+      "cell_idx": 13
+    },
+    {
+      "heading": "Chapter 3 - Looking inside Transformer LLMs",
+      "level": 1,
+      "file": "chapter03/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "**Data**",
+      "level": 1,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "**Text Classification with Representation Models**",
+      "level": 1,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 6
+    },
+    {
+      "heading": "**Using a Task-specific Model**",
+      "level": 2,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 7
+    },
+    {
+      "heading": "**Classification Tasks that Leverage Embeddings**",
+      "level": 2,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 12
+    },
+    {
+      "heading": "Supervised Classification",
+      "level": 3,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 13
+    },
+    {
+      "heading": "Zero-shot Classification",
+      "level": 3,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 20
+    },
+    {
+      "heading": "**Classification with Generative Models**",
+      "level": 2,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 25
+    },
+    {
+      "heading": "Encoder-decoder Models",
+      "level": 3,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 26
+    },
+    {
+      "heading": "ChatGPT for Classification",
+      "level": 3,
+      "file": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "cell_idx": 31
+    },
+    {
+      "heading": "Chapter 4 - Text Classification",
+      "level": 1,
+      "file": "chapter04/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "**ArXiv Articles: Computation and Language**",
+      "level": 1,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "**A Common Pipeline for Text Clustering**",
+      "level": 1,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 5
+    },
+    {
+      "heading": "**1. Embedding Documents**",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 6
+    },
+    {
+      "heading": "**2. Reducing the Dimensionality of Embeddings**",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 9
+    },
+    {
+      "heading": "**3. Cluster the Reduced Embeddings**",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 11
+    },
+    {
+      "heading": "**Inspecting the Clusters**",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 13
+    },
+    {
+      "heading": "Static Plot",
+      "level": 3,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 18
+    },
+    {
+      "heading": "From Text Clustering to Topic Modeling",
+      "level": 1,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 20
+    },
+    {
+      "heading": "**BERTopic: A Modular Topic Modeling Framework**",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 21
+    },
+    {
+      "heading": "**Visualizations**",
+      "level": 3,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 34
+    },
+    {
+      "heading": "**Representation Models**",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 38
+    },
+    {
+      "heading": "Create your representation model",
+      "level": 1,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 39
+    },
+    {
+      "heading": "Use the representation model in BERTopic on top of the default pipeline",
+      "level": 1,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 39
+    },
+    {
+      "heading": "KeyBERTInspired",
+      "level": 3,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 43
+    },
+    {
+      "heading": "Maximal Marginal Relevance",
+      "level": 3,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 45
+    },
+    {
+      "heading": "Text Generation",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 47
+    },
+    {
+      "heading": "Flan-T5",
+      "level": 3,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 48
+    },
+    {
+      "heading": "OpenAI",
+      "level": 3,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 50
+    },
+    {
+      "heading": "**BONUS**: Word Cloud",
+      "level": 2,
+      "file": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "cell_idx": 53
+    },
+    {
+      "heading": "Chapter 5 - Text Clustering and Topic Modeling",
+      "level": 1,
+      "file": "chapter05/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Loading our model",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "**Intro to Prompt Engineering**",
+      "level": 1,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 9
+    },
+    {
+      "heading": "The Basic Ingredients of a Prompt",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 10
+    },
+    {
+      "heading": "**Advanced Prompt Engineering**",
+      "level": 1,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 11
+    },
+    {
+      "heading": "Complex Prompt",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 12
+    },
+    {
+      "heading": "In-Context Learning: Providing Examples",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 16
+    },
+    {
+      "heading": "Chain Prompting: Breaking up the Problem",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 19
+    },
+    {
+      "heading": "**Reasoning with Generative Models**",
+      "level": 1,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 22
+    },
+    {
+      "heading": "Chain-of-Thought: Think Before Answering",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 23
+    },
+    {
+      "heading": "Zero-shot Chain-of-Thought",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 26
+    },
+    {
+      "heading": "Tree-of-Thought: Exploring Intermediate Steps",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 28
+    },
+    {
+      "heading": "**Output Verification**",
+      "level": 1,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 31
+    },
+    {
+      "heading": "Providing Examples",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 32
+    },
+    {
+      "heading": "Grammar: Constrained Sampling",
+      "level": 2,
+      "file": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "cell_idx": 35
+    },
+    {
+      "heading": "Chapter 6 - Advanced Text Generation Techniques and Tools",
+      "level": 1,
+      "file": "chapter06/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Loading an LLM",
+      "level": 1,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "Chains",
+      "level": 3,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 7
+    },
+    {
+      "heading": "Multiple Chains",
+      "level": 3,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 11
+    },
+    {
+      "heading": "Memory",
+      "level": 1,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 18
+    },
+    {
+      "heading": "ConversationBuffer",
+      "level": 2,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 21
+    },
+    {
+      "heading": "ConversationBufferMemoryWindow",
+      "level": 2,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 26
+    },
+    {
+      "heading": "ConversationSummary",
+      "level": 2,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 31
+    },
+    {
+      "heading": "Agents",
+      "level": 1,
+      "file": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "cell_idx": 37
+    },
+    {
+      "heading": "Chapter 7 - Multimodal Large Language Models",
+      "level": 1,
+      "file": "chapter07/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Dense Retrieval Example",
+      "level": 1,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "1. Getting the text archive and chunking it",
+      "level": 2,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 4
+    },
+    {
+      "heading": "2. Embedding the Text Chunks",
+      "level": 2,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 7
+    },
+    {
+      "heading": "3. Building The Search Index",
+      "level": 2,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 9
+    },
+    {
+      "heading": "4. Search the index",
+      "level": 2,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 11
+    },
+    {
+      "heading": "Caveats of Dense Retrieval",
+      "level": 2,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 18
+    },
+    {
+      "heading": "Reranking Example",
+      "level": 1,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 20
+    },
+    {
+      "heading": "Retrieval-Augmented Generation",
+      "level": 1,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 25
+    },
+    {
+      "heading": "Example: Grounded Generation with an LLM API",
+      "level": 2,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 26
+    },
+    {
+      "heading": "Example: RAG with Local Models",
+      "level": 2,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 30
+    },
+    {
+      "heading": "Loading the Generation Model",
+      "level": 3,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 31
+    },
+    {
+      "heading": "Loading the Embedding Model",
+      "level": 3,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 34
+    },
+    {
+      "heading": "Preparing the Vector Database",
+      "level": 3,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 36
+    },
+    {
+      "heading": "The RAG Prompt",
+      "level": 3,
+      "file": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "cell_idx": 38
+    },
+    {
+      "heading": "Chapter 8 - Semantic Search and Retrieval-Augmented Generation",
+      "level": 1,
+      "file": "chapter08/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "CLIP",
+      "level": 2,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "Embeddings",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 6
+    },
+    {
+      "heading": "More Images",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 15
+    },
+    {
+      "heading": "SBERT",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 19
+    },
+    {
+      "heading": "BLIP-2",
+      "level": 2,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 21
+    },
+    {
+      "heading": "Preprocessing Images",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 23
+    },
+    {
+      "heading": "Preprocessing Text",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 27
+    },
+    {
+      "heading": "Use Case 1: Image Captioning",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 31
+    },
+    {
+      "heading": "Use Case 2: Visual Question Answering",
+      "level": 3,
+      "file": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "cell_idx": 36
+    },
+    {
+      "heading": "Chapter 9 - Multimodal Large Language Models",
+      "level": 1,
+      "file": "chapter09/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Creating an Embedding Model",
+      "level": 1,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "**Data**",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 4
+    },
+    {
+      "heading": "**Model**",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 7
+    },
+    {
+      "heading": "**Loss Function**",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 9
+    },
+    {
+      "heading": "Evaluation",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 11
+    },
+    {
+      "heading": "**Training**",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 13
+    },
+    {
+      "heading": "MTEB",
+      "level": 1,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 17
+    },
+    {
+      "heading": "Loss Fuctions",
+      "level": 1,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 22
+    },
+    {
+      "heading": "Cosine Similarity Loss",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 24
+    },
+    {
+      "heading": "Multiple Negatives Ranking Loss",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 31
+    },
+    {
+      "heading": "**Fine-tuning**",
+      "level": 1,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 36
+    },
+    {
+      "heading": "**Supervised**",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 39
+    },
+    {
+      "heading": "**Augmented SBERT**",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 46
+    },
+    {
+      "heading": "**Unsupervised Learning**",
+      "level": 2,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 66
+    },
+    {
+      "heading": "Tranformer-based Denoising AutoEncoder (TSDAE)",
+      "level": 3,
+      "file": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "cell_idx": 67
+    },
+    {
+      "heading": "Chapter 10 - Creating Text Embedding Models",
+      "level": 1,
+      "file": "chapter10/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "**Data**",
+      "level": 2,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "**Supervised Classification**",
+      "level": 2,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 5
+    },
+    {
+      "heading": "HuggingFace Trainer",
+      "level": 3,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 6
+    },
+    {
+      "heading": "Freeze Layers",
+      "level": 3,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 17
+    },
+    {
+      "heading": "Freeze blocks 1-5",
+      "level": 3,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 24
+    },
+    {
+      "heading": "[BONUS] Freeze blocks",
+      "level": 3,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 27
+    },
+    {
+      "heading": "Few-shot Classification",
+      "level": 2,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 31
+    },
+    {
+      "heading": "MLM",
+      "level": 2,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 39
+    },
+    {
+      "heading": "Named Entity Recognition",
+      "level": 2,
+      "file": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "cell_idx": 48
+    },
+    {
+      "heading": "Chapter 11 - Fine-tuning Representation Models for Classification",
+      "level": 1,
+      "file": "chapter11/README.md",
+      "cell_idx": 0
+    },
+    {
+      "heading": "[OPTIONAL] - Installing Packages on <img src=\"https://colab.google/static/images/icons/colab.png\" width=100>",
+      "level": 3,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 1
+    },
+    {
+      "heading": "Supervised Fine-Tuning (SFT)",
+      "level": 1,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 3
+    },
+    {
+      "heading": "Data Preprocessing",
+      "level": 2,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 4
+    },
+    {
+      "heading": "Models - Quantization",
+      "level": 2,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 7
+    },
+    {
+      "heading": "Configuration",
+      "level": 2,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 9
+    },
+    {
+      "heading": "LoRA Configuration",
+      "level": 3,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 10
+    },
+    {
+      "heading": "Training Configuration",
+      "level": 3,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 12
+    },
+    {
+      "heading": "Training!",
+      "level": 2,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 14
+    },
+    {
+      "heading": "Merge Adapter",
+      "level": 3,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 16
+    },
+    {
+      "heading": "Inference",
+      "level": 3,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 18
+    },
+    {
+      "heading": "Preference Tuning (PPO/DPO)",
+      "level": 1,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 20
+    },
+    {
+      "heading": "Data Preprocessing",
+      "level": 2,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 21
+    },
+    {
+      "heading": "Models - Quantization",
+      "level": 2,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 23
+    },
+    {
+      "heading": "Configuration",
+      "level": 2,
+      "file": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "cell_idx": 25
+    },
+    {
+      "heading": "Chapter 12 - Fine-tuning Generation Models",
+      "level": 1,
+      "file": "chapter12/README.md",
+      "cell_idx": 0
+    }
+  ]
+}

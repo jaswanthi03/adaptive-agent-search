@@ -1,0 +1,42 @@
+[
+  {
+    "step": 1,
+    "timestamp": "16:53:54",
+    "question": "How does dense semantic vector search fail when there are no relevant documents, and what movie corpus was tested?",
+    "method": "ripgrep",
+    "query": "(Caveats of Dense Retrieval|What is the mass of the moon|nearest neighbors)",
+    "hits_count": 6,
+    "top_files": [
+      "chapter08/Chapter 8 - Semantic Search.ipynb"
+    ],
+    "helped_answer": false,
+    "assessment": "Missing required tokens: ['interstellar']",
+    "lesson_learned": "Verified with generic evaluator.",
+    "index_consulted": "regex_alias_index.json",
+    "index_entry_used": "dense_retrieval_caveats",
+    "index_reused": false,
+    "original_query": "How does dense semantic vector search fail when there are no relevant documents, and what movie corpus was tested?",
+    "adapted_query": "(Caveats of Dense Retrieval|What is the mass of the moon|nearest neighbors)",
+    "index_helped": false
+  },
+  {
+    "step": 2,
+    "timestamp": "16:53:54",
+    "question": "How does dense semantic vector search fail when there are no relevant documents, and what movie corpus was tested?",
+    "method": "ripgrep",
+    "query": "(Caveats of Dense Retrieval|What is the mass of the moon|nearest neighbors)",
+    "hits_count": 6,
+    "top_files": [
+      "chapter08/Chapter 8 - Semantic Search.ipynb"
+    ],
+    "helped_answer": false,
+    "assessment": "Missing required tokens: ['interstellar']",
+    "lesson_learned": "Second use verified.",
+    "index_consulted": "regex_alias_index.json",
+    "index_entry_used": "dense_retrieval_caveats",
+    "index_reused": true,
+    "original_query": "How does dense semantic vector search fail when there are no relevant documents, and what movie corpus was tested?",
+    "adapted_query": "(Caveats of Dense Retrieval|What is the mass of the moon|nearest neighbors)",
+    "index_helped": false
+  }
+]

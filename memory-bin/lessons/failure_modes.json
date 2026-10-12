@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-10-07T16:07:04.563870",
+  "failure_modes": [
+    {
+      "id": "FM-01-VERBOSE-PROSE-QUERY",
+      "name": "Natural Language Query Mismatch",
+      "trigger": "Submitting full conversational questions (e.g. 'dense retrieval failure', 'unsupervised domain adaptation for text embedding models') to lexical/grep tools.",
+      "consequence": "0 hits or high false-negative rate because technical codebases use formal class names, variable identifiers, and concise headings.",
+      "recovery_strategy": "Extract core concept and query the Heading/Structure Index or Regex/Alias Index first.",
+      "target_index": "heading_structure_index.json"
+    },
+    {
+      "id": "FM-02-ISOLATED-TOKEN-GREP",
+      "name": "Disconnected Mechanistic Grep",
+      "trigger": "Grepping for generic library tokens (e.g. 'bm25', 'del_ratio') across all files.",
+      "consequence": "Returns multiple fragmented code snippets without explanatory narrative, execution output, or parameter context.",
+      "recovery_strategy": "Anchor the section heading first, then read the contiguous cell block (\u00b15 cells) or query the Pragmatic/Task Index.",
+      "target_index": "pragmatic_task_index.json"
+    },
+    {
+      "id": "FM-03-TYPO-AND-SYNONYM-RIGIDITY",
+      "name": "Lexical Inflexibility",
+      "trigger": "Exact string matching failing on minor spelling variations (e.g. 'Tranformer-based' typo in Ch 10) or synonym variation ('failure' vs 'caveat').",
+      "consequence": "Search misses relevant sections despite knowing the conceptual topic.",
+      "recovery_strategy": "Query the Continuous Semantic Embedding Index or Fuzzy Heading Index with subword n-grams.",
+      "target_index": "semantic_embedding_index.json"
+    },
+    {
+      "id": "FM-04-RAW-NOTEBOOK-JSON-NOISE",
+      "name": "Jupyter JSON Schema Flooding",
+      "trigger": "Running unparsed grep directly on raw .ipynb files.",
+      "consequence": "Results flooded with JSON metadata, base64 image strings, and escape sequences.",
+      "recovery_strategy": "Always query parsed cell indexes (RepoIndex) or use cell-scoped search tools.",
+      "target_index": "heading_structure_index.json"
+    }
+  ]
+}

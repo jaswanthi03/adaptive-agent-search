@@ -1,0 +1,260 @@
+{
+  "index_name": "Regex & Technical Alias Mapping Index",
+  "version": "1.0",
+  "created_at": "2026-10-07T16:06:44.100906",
+  "purpose": "Maps human/colloquial search queries and abstract concepts to concrete code identifiers, class names, argument names, and compiled regex patterns.",
+  "failure_motivation": "Motivated by query vocabulary mismatches across all runs. Users ask questions with high-level descriptions ('dense retrieval failure', 'unsupervised embedding adaptation', 'local reasoning runtime'), while the codebase implements them with specific class names and parameters ('IndexFlatL2', 'TSDAE', 'DenoisingAutoEncoderLoss', 'del_ratio', 'llama_cpp'). This index bridges natural language intents to actionable code regexes.",
+  "aliases": [
+    {
+      "concept": "dense_retrieval_caveats",
+      "aliases": [
+        "dense retrieval failure",
+        "nearest neighbor caveats",
+        "out of domain dense search",
+        "false positives"
+      ],
+      "regex": "(Caveats of Dense Retrieval|What is the mass of the moon|nearest neighbors)",
+      "key_tokens": [
+        "IndexFlatL2",
+        "co.embed",
+        "search_query"
+      ],
+      "target_chapter": "chapter08",
+      "primary_notebook": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "anchor_cell": 18,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:53:54.276927",
+      "reason_created": "Map natural language queries about 'dense retrieval caveats' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "dense_failure_trace:step_1",
+        "cumulative_trace:step_1"
+      ],
+      "failure_types": [
+        "FM-01-VERBOSE-PROSE-QUERY",
+        "vocabulary_mismatch"
+      ],
+      "tested": false,
+      "times_used": 2,
+      "successful_uses": 0
+    },
+    {
+      "concept": "unsupervised_embedding_adaptation",
+      "aliases": [
+        "unsupervised learning embeddings",
+        "TSDAE",
+        "denoising autoencoder",
+        "word deletion noise",
+        "embedding domain adaptation"
+      ],
+      "regex": "(TSDAE|Tranformer-based Denoising AutoEncoder|DenoisingAutoEncoderDataset|DenoisingAutoEncoderLoss|del_ratio)",
+      "key_tokens": [
+        "tie_encoder_decoder",
+        "delete_words",
+        "losses.DenoisingAutoEncoderLoss"
+      ],
+      "target_chapter": "chapter10",
+      "primary_notebook": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "anchor_cell": 66,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:29:28.850031",
+      "reason_created": "Map natural language queries about 'unsupervised embedding adaptation' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "cumulative_trace:step_6"
+      ],
+      "failure_types": [
+        "FM-01-VERBOSE-PROSE-QUERY",
+        "typo_and_synonym_rigidity"
+      ],
+      "tested": false,
+      "times_used": 0,
+      "successful_uses": 0
+    },
+    {
+      "concept": "conversation_memory",
+      "aliases": [
+        "chat history",
+        "conversation buffer",
+        "conversation summary",
+        "sliding window memory"
+      ],
+      "regex": "(ConversationBufferMemory|ConversationBufferWindowMemory|ConversationSummaryMemory)",
+      "key_tokens": [
+        "memory_key",
+        "chat_history",
+        "k=2"
+      ],
+      "target_chapter": "chapter07",
+      "primary_notebook": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "anchor_cell": 18,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:29:28.850035",
+      "reason_created": "Map natural language queries about 'conversation memory' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "cumulative_trace:step_1"
+      ],
+      "failure_types": [
+        "FM-01-VERBOSE-PROSE-QUERY"
+      ],
+      "tested": false,
+      "times_used": 0,
+      "successful_uses": 0
+    },
+    {
+      "concept": "reasoning_local_models",
+      "aliases": [
+        "chain of thought",
+        "tree of thought",
+        "local inference",
+        "quantized reasoning",
+        "GGUF runtime"
+      ],
+      "regex": "(Tree-of-Thought|Chain-of-Thought|Zero-shot Chain-of-Thought|llama_cpp|Llama|GGUF)",
+      "key_tokens": [
+        "llama_cpp",
+        "n_gpu_layers",
+        "n_ctx"
+      ],
+      "target_chapter": "chapter06",
+      "primary_notebook": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "anchor_cell": 22,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:29:28.850037",
+      "reason_created": "Map natural language queries about 'reasoning local models' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "cumulative_trace:step_4"
+      ],
+      "failure_types": [
+        "runtime_identifier_miss"
+      ],
+      "tested": false,
+      "times_used": 0,
+      "successful_uses": 0
+    },
+    {
+      "concept": "topic_modeling_diversity",
+      "aliases": [
+        "topic representations",
+        "bertopic",
+        "keybert",
+        "keyword diversity",
+        "maximal marginal relevance"
+      ],
+      "regex": "(BERTopic|KeyBERTInspired|Maximal Marginal Relevance|diversity|c-TF-IDF)",
+      "key_tokens": [
+        "KeyBERTInspired",
+        "MaximalMarginalRelevance",
+        "nr_topics"
+      ],
+      "target_chapter": "chapter05",
+      "primary_notebook": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "anchor_cell": 36,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:29:28.850040",
+      "reason_created": "Map natural language queries about 'topic modeling diversity' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "proactive_structural_mapping"
+      ],
+      "failure_types": [
+        "vocabulary_mismatch"
+      ],
+      "tested": false,
+      "times_used": 0,
+      "successful_uses": 0
+    },
+    {
+      "concept": "preference_tuning_alignment",
+      "aliases": [
+        "DPO",
+        "direct preference optimization",
+        "PPO",
+        "RLHF",
+        "alignment"
+      ],
+      "regex": "(DPOTrainer|DPO|PPO|Preference Tuning|trl|peft)",
+      "key_tokens": [
+        "DPOTrainer",
+        "beta",
+        "reward_model"
+      ],
+      "target_chapter": "chapter12",
+      "primary_notebook": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "anchor_cell": 21,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:29:28.850042",
+      "reason_created": "Map natural language queries about 'preference tuning alignment' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "proactive_structural_mapping"
+      ],
+      "failure_types": [
+        "vocabulary_mismatch"
+      ],
+      "tested": false,
+      "times_used": 0,
+      "successful_uses": 0
+    },
+    {
+      "concept": "tokenization_embeddings",
+      "aliases": [
+        "subword tokens",
+        "BPE",
+        "WordPiece",
+        "contextual word embeddings",
+        "sentence transformers"
+      ],
+      "regex": "(Comparing Trained LLM Tokenizers|Word Embeddings Beyond LLMs|sentence_transformers)",
+      "key_tokens": [
+        "AutoTokenizer",
+        "Word2Vec",
+        "encode"
+      ],
+      "target_chapter": "chapter02",
+      "primary_notebook": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "anchor_cell": 7,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:29:28.850044",
+      "reason_created": "Map natural language queries about 'tokenization embeddings' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "proactive_structural_mapping"
+      ],
+      "failure_types": [
+        "vocabulary_mismatch"
+      ],
+      "tested": false,
+      "times_used": 0,
+      "successful_uses": 0
+    },
+    {
+      "concept": "parameter_efficient_finetuning",
+      "aliases": [
+        "LoRA",
+        "QLoRA",
+        "PEFT",
+        "adapter",
+        "SFTTrainer"
+      ],
+      "regex": "(LoraConfig|get_peft_model|SFTTrainer|prepare_model_for_kbit_training)",
+      "key_tokens": [
+        "r=16",
+        "lora_alpha",
+        "target_modules"
+      ],
+      "target_chapter": "chapter12",
+      "primary_notebook": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "anchor_cell": 10,
+      "created_at": "2026-10-07T16:06:44",
+      "updated_at": "2026-10-07T16:29:28.850046",
+      "reason_created": "Map natural language queries about 'parameter efficient finetuning' to exact code classes and regexes.",
+      "source_trace_ids": [
+        "proactive_structural_mapping"
+      ],
+      "failure_types": [
+        "vocabulary_mismatch"
+      ],
+      "tested": false,
+      "times_used": 0,
+      "successful_uses": 0
+    }
+  ],
+  "updated_at": "2026-10-07T16:29:28.849801",
+  "schema_version": "2.0"
+}
