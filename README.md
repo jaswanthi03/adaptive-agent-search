@@ -1,68 +1,93 @@
 # Adaptive Agent Search & Repository Memory
 
-**Humanitarians AI Research Project**  
-**Investigator / Fellow:** Jaswanthi Banoth  
-**Lead Agent Architecture:** Optimus (arkenOS runtime, `gemini-3.8-flash` Frontier driver)  
+**Humanitarians AI Fellowship Research Project**  
+**Fellow:** Jaswanthi Banoth  
+**Project Lead / Agent:** Optimus (arkenOS runtime, `gemini-3.8-flash` Frontier driver)  
+**Project Supervisor:** Dev  
 **Target Repository Under Study:** [`HandsOnLLM/Hands-On-Large-Language-Models`](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) (O'Reilly, 2024; 83 files, 169 Markdown headings, 528 cells/docs)  
 
 ---
 
 ## 1. Project Background & Research Objective
 
-Autonomous software agents frequently fail when searching complex codebases and notebook repositories:
-1. **Conversational vs. Code Vocabulary Mismatch:** Users ask questions in high-level prose (*"How do I adapt an embedding model to a new domain without labels?"*), but codebases implement them using concise section headings (*"Unsupervised Learning"*) and specific library symbols (*`TSDAE`*, *`DenoisingAutoEncoderLoss`*). Naive string greps fail on Turn 1 with 0 hits.
-2. **Notebook JSON Noise & Spatial Distribution:** Jupyter notebooks (`.ipynb`) are stored as raw JSON. Naive text searches flood LLM context with base64 image strings and escape characters. Furthermore, notebook logic is chronologically distributed across cells: imports happen in Cell 2, prompt definitions in Cell 23, and model instantiations in Cell 37. Isolated snippet greps miss necessary context.
+Autonomous software agents frequently struggle when retrieving information from code and notebook repositories:
+1. **Conversational vs. Code Vocabulary Mismatch:** Users ask questions in high-level prose (*"How do I adapt an embedding model to a new domain without labels?"*), whereas codebases organize content by concise headings (*"Unsupervised Learning"*) and specific symbols (*`TSDAE`*, *`DenoisingAutoEncoderLoss`*). Naive string greps fail on Turn 1 with 0 hits.
+2. **Notebook JSON Noise & Spatial Distribution:** Jupyter notebooks (`.ipynb`) are stored as raw JSON. Naive text searches flood LLM context with base64 image strings and escape characters. Furthermore, notebook implementations are chronologically distributed across cells: imports happen in Cell 2, prompt templates in Cell 23, and model instantiations in Cell 37. Isolated snippet greps miss necessary context.
 
 **Core Research Question:**  
 *Can an autonomous agent record its own search failures, synthesize persistent structural indexes, and reuse them to eliminate repeated search failures on unseen repository tasks?*
 
 ---
 
-## 2. What Was Built
+## 2. Repository Structure & Artifacts
+
+All research code, persistent indexes, failure taxonomies, and experimental benchmarks are organized under:
 
 ```text
 adaptive-agent-search/
-├── README.md                                  # Repository documentation & experimental summary
-├── .gitignore                                 # Clean exclusion rules for external repos & runtime data
-├── adaptive_search_repl.ipynb                 # Interactive REPL environment with clean notebook cell parsing
-└── memory-bin/                                # Persistent memory workspace
-    ├── README.md                              # Architecture & query quickstart guide
-    ├── indexes/                               # Reusable materialized indexes
-    │   ├── heading_structure_index.json       # 169 true Markdown headings with cell offsets
-    │   ├── regex_alias_index.json             # 8 concept-to-token alias mappings with compiled regexes
-    │   ├── pragmatic_task_index.json          # 6 engineering workflows mapped to contiguous cell blocks
-    │   └── lexical_vector_index.json          # Subword (char 3-gram + word) TF-IDF vector space model
-    ├── lessons/                               # Codified failure lessons & taxonomies
-    │   ├── failure_modes.json                 # Structured failure taxonomy (FM-01 through FM-04)
-    │   └── search_lessons.md                  # Operational search principles
-    ├── traces/                                # Raw execution trace logs
-    │   ├── cumulative_search_trace.json       # Multi-session search attempts
-    │   ├── dense_failure_trace.json           # Chapter 8 dense retrieval caveat investigation
-    │   ├── connected_agent_trace.json         # Automated index-routed search trace
-    │   └── telemetry_verification_trace.json  # Telemetry verification (times_used & index_reused)
-    └── experiments/                           # Controlled benchmarks & ablation studies
-        ├── benchmark_questions.json           # Original frozen 4-question benchmark
-        ├── benchmark_questions_v2_verified.json # Audited, ground-truth verified benchmark
-        ├── first_index_ab/                    # Pilot 1 initial A/B run traces
-        ├── first_index_ab_with_local_expansion/ # Pilot 2 traces with local cell expansion
-        └── benchmark_v2_ranked_anchors_ab_run/  # Pilot 3 final verified traces with ranked anchor selection
+├── README.md                                           # Repository overview & reproduction guide
+├── RESEARCH_PROGRESS.md                                # Fellowship progress, contributions & supervision history
+├── renewal-report.md                                   # Fellowship renewal evidence document
+├── .gitignore                                          # Clean exclusions (external repos, runtime state)
+├── adaptive_search_repl.ipynb                          # Interactive REPL notebook with clean cell parsing
+└── memory-bin/                                         # Persistent memory workspace
+    ├── README.md                                       # Architecture & query guide
+    ├── indexes/                                        # Reusable materialized indexes
+    │   ├── heading_structure_index.json                # 169 true Markdown headings with cell offsets
+    │   ├── regex_alias_index.json                      # 8 concept-to-token alias mappings with compiled regexes
+    │   ├── pragmatic_task_index.json                   # 6 engineering workflows mapped to contiguous cell blocks
+    │   └── lexical_vector_index.json                   # Subword (char 3-gram + word) TF-IDF vector space model
+    ├── lessons/                                        # Codified failure lessons & taxonomies
+    │   ├── failure_modes.json                          # Structured failure taxonomy (FM-01 through FM-04)
+    │   └── search_lessons.md                           # Operational search principles
+    ├── traces/                                         # Raw execution trace logs
+    │   ├── cumulative_search_trace.json                # Multi-session search attempts
+    │   ├── dense_failure_trace.json                    # Chapter 8 dense retrieval caveat investigation
+    │   ├── connected_agent_trace.json                  # Automated index-routed search trace
+    │   └── telemetry_verification_trace.json           # Telemetry verification (times_used & index_reused)
+    └── experiments/                                    # Controlled benchmarks & ablation studies
+        ├── benchmark_questions.json                    # Original frozen 4-question benchmark
+        ├── benchmark_questions_v2_verified.json          # Audited, ground-truth verified benchmark
+        ├── first_index_ab/                             # Pilot 1 initial A/B run traces
+        ├── first_index_ab_with_local_expansion/        # Pilot 2 traces with local cell expansion
+        └── benchmark_v2_ranked_anchors_ab_run/         # Pilot 3 final verified traces with ranked anchor selection
 ```
 
-### Core Components:
-1. **`adaptive_search_repl.ipynb`:** Parses `.ipynb` files into clean `markdown` and `code` cells, providing search primitives (`ripgrep_search`, `lexical_search`, `fuzzy_search`, `view_cell`) and execution logging (`SearchTraceLog`).
-2. **`memory-bin/indexes/`:** Materializes persistent indexes born from failure diagnoses.
-   * *Classification note:* `lexical_vector_index.json` is accurately classified as a **subword lexical vector-space index (TF-IDF / character n-gram cosine similarity)**, *not* a neural embedding model.
-3. **Decoupled Evaluation Interface (`BenchmarkEvaluator`):** An independent evaluator that validates search outputs post-search against strict contracts (`required_all`, `required_any`, `expected_files`) without leaking criteria to the agent.
-4. **Local Cell-Block Expansion & Ranked Anchor Selection:**
-   * Generic boilerplate filter (`is_setup_or_install_cell`) deprioritizes line 1 `!pip install` cells.
-   * Candidate anchor scoring ranks executable code cells with imports/API calls (score 30.0) above markdown section headings (score 10.0) and boilerplate (score -1.0).
-   * Automatically expands a bounded $\pm 3$ cell window around the selected anchor.
+### Direct Links to Key Artifacts:
+* **Interactive Notebook:** [`adaptive_search_repl.ipynb`](adaptive_search_repl.ipynb)
+* **Materialized Indexes:**
+  * [`heading_structure_index.json`](memory-bin/indexes/heading_structure_index.json) (Structural hierarchy of 169 headings)
+  * [`regex_alias_index.json`](memory-bin/indexes/regex_alias_index.json) (Precompiled regex patterns and target chapters)
+  * [`pragmatic_task_index.json`](memory-bin/indexes/pragmatic_task_index.json) (Workflow pipeline mappings)
+  * [`lexical_vector_index.json`](memory-bin/indexes/lexical_vector_index.json) (Subword TF-IDF model over 528 cells)
+* **Failure Taxonomies & Lessons:**
+  * [`failure_modes.json`](memory-bin/lessons/failure_modes.json) (Formal catalog of failure patterns FM-01 to FM-04)
+  * [`search_lessons.md`](memory-bin/lessons/search_lessons.md) (Codified search heuristics)
+* **Audited Benchmarks & Experiment Traces:**
+  * [`benchmark_questions_v2_verified.json`](memory-bin/experiments/benchmark_questions_v2_verified.json) (Audited benchmark ground truth)
+  * [`benchmark_questions.json`](memory-bin/experiments/benchmark_questions.json) (Original frozen benchmark)
+  * Final Paired Summary: [`experiment_summary.json`](memory-bin/experiments/benchmark_v2_ranked_anchors_ab_run/experiment_summary.json)
+  * Final Paired Traces: [`full_traces_paired.json`](memory-bin/experiments/benchmark_v2_ranked_anchors_ab_run/full_traces_paired.json)
+  * Earlier Ablations: [`Pilot 1 Summary`](memory-bin/experiments/first_index_ab/experiment_traces_summary.json) | [`Pilot 2 Summary`](memory-bin/experiments/first_index_ab_with_local_expansion/experiment_summary.json)
 
 ---
 
-## 3. Verified Experimental Results (Pilot 3)
+## 3. Implementation Details
 
-The benchmark was executed across **4 frozen questions** stored in `memory-bin/experiments/benchmark_questions_v2_verified.json` under paired MEMORY OFF vs. MEMORY ON conditions:
+1. **Jupyter Cell Parser (`RepoIndex`):** Eliminates raw JSON metadata noise by parsing `.ipynb` files into discrete `markdown` and `code` cells, cataloging 169 Markdown headings and 528 cells/files.
+2. **Index Loading & Routing (`MemoryBinIndexManager`):** Loads [`regex_alias_index.json`](memory-bin/indexes/regex_alias_index.json) and routes natural-language questions to pre-compiled regexes. Enforces a confidence threshold of $\ge 0.60$ with stop-word filtering to prevent false-positive index hijacking.
+3. **Decoupled Evaluation Interface (`BenchmarkEvaluator`):** An independent evaluation contract that grades retrieved evidence post-search against `required_all`, `required_any`, and `expected_files` tokens. The agent has zero knowledge of gold criteria during retrieval.
+4. **Ranked Anchor Selection & Local Cell Expansion:**
+   * Generic boilerplate filter (`is_setup_or_install_cell`) deprioritizes line 1 `!pip install` cells.
+   * Anchor scorer (`score_candidate_anchor`) ranks executable code cells with imports/API calls (score 30.0) above markdown section headings (score 10.0) and setup boilerplate (score -1.0).
+   * Automatically expands a bounded $\pm 3$ cell window around the top-ranked anchor.
+5. **Representation Note:** [`lexical_vector_index.json`](memory-bin/indexes/lexical_vector_index.json) is strictly a **subword lexical vector-space model (character 3-gram + word TF-IDF with cosine similarity)**. It does not use neural bi-encoders (e.g. `sentence-transformers`), which were excluded from this phase.
+
+---
+
+## 4. Controlled Benchmark Results (Pilot 3)
+
+The benchmark was evaluated across **4 frozen questions** stored in [`benchmark_questions_v2_verified.json`](memory-bin/experiments/benchmark_questions_v2_verified.json) under paired MEMORY OFF vs. MEMORY ON conditions. Both conditions used the identical search tools, action budgets, and post-search evaluator:
 
 | Question ID | Target Chapter | Condition | First Action Tool | Global Searches | Local Inspections | Failed Searches | Index Used | Correct Evidence |
 | :--- | :--- | :--- | :--- | :---:| :---:| :---:| :--- | :---: |
@@ -75,42 +100,58 @@ The benchmark was executed across **4 frozen questions** stored in `memory-bin/e
 | **`q4_kv_cache_speedup`** | Ch 3 | MEMORY OFF | `fuzzy_headings` | 1 | 1 | 0 | None | False |
 | **`q4_kv_cache_speedup`** | Ch 3 | MEMORY ON | `fuzzy_headings` | 1 | 1 | 0 | None | False |
 
-### Aggregate Metrics:
+### Verified Summary Metrics:
 * **Correct Evidence Found:** MEMORY ON: **1 / 4 (25%)** | MEMORY OFF: **0 / 4 (0%)**
-* **Failed Searches:** MEMORY ON: **1** | MEMORY OFF: **2** (50% reduction)
-* **Global Searches:** MEMORY ON: **5** | MEMORY OFF: **6** (-1 redundant search)
+* **Failed Search Actions:** MEMORY ON: **1** | MEMORY OFF: **2** (on this specific 4-question run)
+* **Global Searches:** MEMORY ON: **5** | MEMORY OFF: **6**
 * **False-Positive Index Routing:** **0** (router correctly rejected negative controls `q3` and `q4`).
 
 ---
 
-## 4. What the Findings Prove and Do Not Prove
+## 5. Observations and Limitations
 
-### What is Supported:
-1. **Elimination of Turn-1 Conversational Failures:** On `q2`, MEMORY ON converted a 16-word conversational query into an exact pre-scoped regex on Turn 1, whereas MEMORY OFF attempted a fuzzy heading search for `"local quantized runtime"`, found 0 hits, and had to fall back to an un-scoped search.
-2. **Code-Specific Anchor Ranking is Crucial:** Ranking code imports (Cell 37) above section headings (Cell 22) was the decisive factor that allowed local expansion to capture the actual GGUF model load call (`Llama.from_pretrained`), converting `q2` from a failure into verified evidence.
-3. **Thresholding Prevents False-Positive Hijacking:** On the two un-indexed negative control questions (`q3` and `q4`), the router correctly rejected candidate matches (confidence below 0.60) and executed identical fallback logic to MEMORY OFF.
+### Empirical Observations from this Pilot:
+1. **Targeted Turn-1 Routing:** On `q2`, MEMORY ON converted a 16-word conversational query into an exact pre-scoped regex on Turn 1 (`(Tree-of-Thought|...|llama_cpp|...)`). In contrast, MEMORY OFF attempted a fuzzy heading search for `"local quantized runtime"`, found 0 hits (a failed search), and had to execute an un-scoped fallback search.
+2. **Code-Specific Anchor Ranking is Critical:** In `q2`, ranking code imports (Cell 37, score 30.0) above section headings (Cell 22, score 10.0) enabled local cell expansion to capture `from llama_cpp.llama import Llama`, `Llama.from_pretrained`, and `Phi-3-mini-4k-instruct-q4.gguf`, satisfying all gold evaluator criteria.
+3. **Safe Rejection on Negative Controls:** On the two un-indexed negative control questions (`q3` and `q4`), the router correctly rejected candidate matches (confidence below 0.60) and executed identical fallback logic to MEMORY OFF with zero false-positive routing.
 
-### What is NOT Claimed:
-1. **Does not prove general autonomous learning:** The agent did not modify model weights or learn new neural policies. It retrieved deterministic, pre-compiled regexes from persistent JSON files.
-2. **Does not solve long-range cell spans:** On `q1`, both conditions reached the correct notebook but failed within a single $\pm 3$ cell window because the class definition was 10 cells away from the heading.
-3. **Does not establish a statistical benchmark:** This was a controlled 4-question pilot. A general percentage improvement cannot be claimed without scaling to 15+ questions across all 12 chapters.
+### Current Limitations & Failure Analysis:
+1. **Fixed-Window Distance Failure (`q1`):** In Chapter 5, the topic representation heading is at Cell 38, but the `MaximalMarginalRelevance(diversity=0.5)` implementation is at Cell 46. A fixed $\pm 3$ cell window anchored at Cell 36 stops at Cell 39, missing the code definition by 7 cells. Both conditions failed because of this spatial span.
+2. **Heuristic Keyword Mismatches (`q3` and `q4`):** On `q3`, the heuristic heading query `"vision-language architecture image"` did not match the concise chapter headings (`## BLIP-2` and `## CLIP`). On `q4`, the heading query `"attention optimization mechanism"` matched a README instead of Chapter 3.
+3. **Pilot Scope:** The reduction in failed searches (1 vs. 2) and the single solved question (1 vs. 0) are observations from a small 4-question pilot. They do **not** establish a general performance improvement or prove autonomous learning.
+4. **Lexical Representation Boundary:** When queries share zero token overlap with headings or aliases, the lexical TF-IDF index cannot compute continuous semantic proximity.
 
 ---
 
-## 5. Reproduction Quickstart
+## 6. Reproduction Quickstart
 
+The following instructions have been verified and execute cleanly:
+
+### Step 1: Clone the Reference Repository
 ```bash
-# 1. Clone the testbed repository
+# Clone the repository under study into the workspace root
 git clone https://github.com/HandsOnLLM/Hands-On-Large-Language-Models.git
+```
 
-# 2. Open and run the interactive REPL notebook
+### Step 2: Verify the Persistent Indexes
+```bash
+python3 -c "import json; data = json.load(open('memory-bin/indexes/regex_alias_index.json')); print('Cataloged concepts:', len(data['aliases']))"
+```
+*Expected output:* `Cataloged concepts: 8`
+
+### Step 3: Inspect the Verified Benchmark Specification
+```bash
+python3 -c "import json; data = json.load(open('memory-bin/experiments/benchmark_questions_v2_verified.json')); print('Benchmark questions:', len(data))"
+```
+*Expected output:* `Benchmark questions: 4`
+
+### Step 4: Inspect the Final Pilot 3 Experiment Summary
+```bash
+python3 -c "import json; data = json.load(open('memory-bin/experiments/benchmark_v2_ranked_anchors_ab_run/experiment_summary.json')); print('Paired test items:', len(data))"
+```
+*Expected output:* `Paired test items: 4`
+
+### Step 5: Run the Interactive Notebook
+```bash
 jupyter notebook adaptive_search_repl.ipynb
-
-# 3. Query the persistent index in Python
-python3 -c "
-import json
-with open('memory-bin/indexes/regex_alias_index.json') as f:
-    data = json.load(f)
-print('Total persistent concepts:', len(data['aliases']))
-"
 ```
