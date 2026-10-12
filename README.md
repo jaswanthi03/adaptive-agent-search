@@ -3,7 +3,7 @@
 **Humanitarians AI Fellowship Research Project**  
 **Fellow:** Jaswanthi Banoth  
 **Project Lead / Agent:** Optimus (arkenOS runtime, `gemini-3.8-flash` Frontier driver)  
-**Project Supervisor:** Dev  
+**Project Supervisor:** Dev shah  
 **Target Repository Under Study:** [`HandsOnLLM/Hands-On-Large-Language-Models`](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) (O'Reilly, 2024; 83 files, 169 Markdown headings, 528 cells/docs)  
 
 ---
@@ -104,7 +104,7 @@ The benchmark was evaluated across **4 frozen questions** stored in [`benchmark_
 * **Correct Evidence Found:** MEMORY ON: **1 / 4 (25%)** | MEMORY OFF: **0 / 4 (0%)**
 * **Failed Search Actions:** MEMORY ON: **1** | MEMORY OFF: **2** (on this specific 4-question run)
 * **Global Searches:** MEMORY ON: **5** | MEMORY OFF: **6**
-* **False-Positive Index Routing:** **0** (router correctly rejected negative controls `q3` and `q4`).
+* **False-Positive Index Routing on Controls:** **0** (zero false-positive index activations were observed on the two negative-control questions `q3` and `q4`).
 
 ---
 
@@ -162,7 +162,8 @@ jupyter notebook adaptive_search_repl.ipynb
 
 As part of the **Humanitarians AI Fellowship**, the complete research history, retrospective work logs, technical bottlenecks, and artifact verification records are cataloged in the [`fellowship-evidence/`](fellowship-evidence/) directory:
 
-* [**Fellowship Work Log (`fellowship-evidence/WORK_LOG.md`)**](fellowship-evidence/WORK_LOG.md): Reconstructed weekly activity log (September 4 – October 12, 2026), contractual commitment details (20–40 hours/week), technical classifications, and evidentiary anchors.
+* [**Fellowship Work Log (`fellowship-evidence/WORK_LOG.md`)**](fellowship-evidence/WORK_LOG.md): Reconstructed weekly activity log (September 11 – October 12, 2026), contractual commitment details (20–40 hours/week), confirmed self-reported weekly hours across active Weeks 1–5, technical classifications, and evidentiary anchors.
 * [**Frictional Analysis & Bottleneck Log (`fellowship-evidence/FRICTIONAL.md`)**](fellowship-evidence/FRICTIONAL.md): In-depth examination of technical failure modes (video artifact rendering timeouts, code boilerplate starvation, cell-span truncation ceiling, anchor selection traps), benchmark verification analysis, and administrative friction.
-* [**Evidence Audit & Artifact Map (`fellowship-evidence/EVIDENCE.md`)**](fellowship-evidence/EVIDENCE.md): Immutable audit trail linking reported milestones to physical files, Git commits, Optimus session transcripts, and benchmark evaluation proofs (with sensitive personal data redacted).
+* [**Evidence Audit & Artifact Map (`fellowship-evidence/EVIDENCE.md`)**](fellowship-evidence/EVIDENCE.md): Retrospectively reconstructed, version-controlled evidence map linking reported milestones to physical files, Git commits, Optimus session transcripts, and benchmark evaluation proofs (with sensitive personal data redacted).
+* [**Research Progress Videos (Google Drive Folder)**](https://drive.google.com/drive/folders/10CnVBjdP3e29JFJIHTLEWQyQy-BqzOwr?usp=drive_link): External video evidence folder cataloging weekly progress presentations and Brutalist video updates (provided for review; individual videos reflect work-in-progress research records).
 

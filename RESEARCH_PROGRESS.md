@@ -2,7 +2,7 @@
 
 **Fellow:** Jaswanthi Banoth  
 **Project Lead / Agent:** Optimus (arkenOS runtime, `gemini-3.8-flash` Frontier driver)  
-**Project Supervisor:** Dev  
+**Project Supervisor:** Dev shah  
 **Target Repository:** `HandsOnLLM/Hands-On-Large-Language-Models` (O'Reilly, 2024; 83 files, 169 true Markdown headings, 528 cells/docs)  
 **Date:** October 2026  
 
@@ -20,7 +20,7 @@ This research investigates whether an autonomous agent can maintain an explicit,
 
 ## 2. Technical Deliverables & Fellow Contributions
 
-During this research cycle, the following technical deliverables were designed, implemented, and verified in `/Users/jaswanthibanoth/Desktop/jev`:
+During this research cycle, the following technical deliverables were designed, implemented, and verified in the local workspace repository:
 
 ### A. Core Architecture Deliverables
 1. **Interactive Search REPL ([`adaptive_search_repl.ipynb`](adaptive_search_repl.ipynb)):**
@@ -76,7 +76,7 @@ The system was evaluated across three controlled A/B pilots on four frozen bench
    * MEMORY OFF scored **0 / 4 correct evidence**.
    * Failed searches: MEMORY ON had **1** vs. MEMORY OFF had **2** (50% reduction).
    * Global searches: MEMORY ON had **5** vs. MEMORY OFF had **6**.
-   * False-positive routing on negative controls: **0** (router correctly rejected `q3` and `q4`).
+   * False-positive routing on negative controls: **0** (zero false-positive index activations were observed on the two negative-control questions `q3` and `q4`).
 
 ### Ground-Truth Benchmark Auditing:
 Before finalizing Pilot 3, an audit of the benchmark specifications against the actual repository code exposed three errors in our initial evaluation contracts:
@@ -89,7 +89,7 @@ Before finalizing Pilot 3, an audit of the benchmark specifications against the 
 
 ## 5. Project Supervision & Documented Feedback
 
-**Project Supervisor:** Dev
+**Project Supervisor:** Dev shah
 
 During this research cycle, supervisory technical feedback directly steered key architecture and communication decisions:
 1. **Executive Conciseness & High Signal:** Directed the condensation of verbose narrative traces into an executive-level, under-2,000-character technical update, enforcing a strict focus on empirical facts over speculative prose.
@@ -107,5 +107,15 @@ During this research cycle, supervisory technical feedback directly steered key 
 2. **Lexical Representation Boundary:** When queries share zero token overlap with headings or aliases (e.g. `q3`), the lexical TF-IDF index cannot compute continuous semantic proximity.
 
 ### Next Research Milestone (Target Date: October 31, 2026):
-1. **Adaptive Heading-to-Heading Block Expansion:** Implement dynamic cell expansion that reads forward from the anchor cell until the next major heading (`##`) or a maximum of 10 cells, resolving long-range cell spans like `q1`.
-2. **Benchmark Scaling:** Expand the verified benchmark from 4 to 15+ questions across all 12 chapters to evaluate statistically significant recall differences.
+1. **Adaptive Heading-to-Heading Block Expansion (Proposed):** Implement dynamic cell expansion that reads forward from the anchor cell until the next major heading (`##`) or a maximum of 10 cells, resolving long-range cell spans like `q1`.
+2. **Benchmark Scaling:** Expand the verified benchmark from 4 to 15+ questions across all 12 chapters to evaluate recall differences.
+
+---
+
+## 7. Retrospective Fellowship Records & Evidence
+
+Comprehensive retrospective documentation, weekly activity hours, and evidence mappings are cataloged under [`fellowship-evidence/`](fellowship-evidence/):
+* [`fellowship-evidence/WORK_LOG.md`](fellowship-evidence/WORK_LOG.md): Weekly activity logs and fellow-confirmed hours (Weeks 1–5).
+* [`fellowship-evidence/FRICTIONAL.md`](fellowship-evidence/FRICTIONAL.md): Diagnostic friction log and benchmark verification analysis.
+* [`fellowship-evidence/EVIDENCE.md`](fellowship-evidence/EVIDENCE.md): Retrospectively reconstructed evidence map and artifact links.
+* [Research Progress Videos (Google Drive)](https://drive.google.com/drive/folders/10CnVBjdP3e29JFJIHTLEWQyQy-BqzOwr?usp=drive_link): External video evidence folder cataloging weekly progress presentations.

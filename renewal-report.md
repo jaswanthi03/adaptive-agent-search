@@ -3,9 +3,10 @@
 **Fellow Name:** Jaswanthi Banoth  
 **Project:** Adaptive Agent Search & Repository Memory (Optimus Fleet)  
 **Degree Program:** Master of Science in Business Analytics  
-**Project Supervisor:** Dev  
+**Project Supervisor:** Dev shah  
 **Requested Renewal Period:** October 1 – October 31, 2026  
 **Repository:** [https://github.com/jaswanthi03/adaptive-agent-search](https://github.com/jaswanthi03/adaptive-agent-search)  
+**Video Evidence Folder:** [Research Progress Videos (Google Drive Folder)](https://drive.google.com/drive/folders/10CnVBjdP3e29JFJIHTLEWQyQy-BqzOwr?usp=drive_link)  
 
 ---
 
@@ -13,15 +14,15 @@
 
 I am submitting this renewal request for the period of **October 1 to October 31, 2026**.
 
-**Explanation for Late Submission:**  
-This renewal report is being submitted after October 1 because I mistakenly assumed that the fellowship agreement would renew automatically at the beginning of the month. I recognize that administrative renewal requires an explicit submission and evaluation. This document accurately reflects my ongoing technical contributions, without implying that HR or administration has pre-approved a backdated extension.
+**Submission Context & Status:**  
+The fellowship renewal request was submitted via email on October 12, 2026, to `hr@humanitarians.ai` and `bear@humanitarians.ai`, with project supervisor Dev Shah (`Dev shah`) copied. This request is being submitted after October 1 because I mistakenly assumed that the fellowship agreement would renew automatically at the beginning of the month. I recognize that administrative renewal requires explicit submission, review, and approval. This document serves as supporting research documentation detailing October research continuation; approval remains pending.
 
-*Administrative Placeholders for Verification:*
-* **Current Agreement Expiration Date:** `[PLACEHOLDER: Current Agreement Expiration Date, e.g., September 30, 2026]`
-* **OPT Work Authorization Dates:** `[PLACEHOLDER: Current OPT Authorization Start Date to End Date, e.g., MM/DD/YYYY - MM/DD/YYYY]`
-* **Weekly Hours Logged:** `[PLACEHOLDER: Weekly Hours Logged, e.g., XX hours/week]`
-* **Time-Tracking / Frictional Logs:** `[PLACEHOLDER: Link to Dated Frictional / Time-tracking Sheet or Log]`
-* **Weekly Video Update:** `[PLACEHOLDER: Link to 75-90s Video Progress Recording / Antigravity URL]`
+*Administrative Verification Records:*
+* **Current Agreement Expiration Date:** September 30, 2026 (Initial volunteer agreement covered September 4 – September 30, 2026).
+* **Work Authorization Dates:** August 4, 2026 – July 5, 2027 (08/04/2026 – 07/05/2027; local evidence available privately upon request).
+* **Weekly Hours Logged:** 20–30 hours/week across full weeks; 10 hours for partial 5-day week ending October 12, 2026 (self-reported, retrospectively reconstructed).
+* **Time-Tracking & Frictional Logs:** Cataloged in [`fellowship-evidence/WORK_LOG.md`](fellowship-evidence/WORK_LOG.md) and [`fellowship-evidence/FRICTIONAL.md`](fellowship-evidence/FRICTIONAL.md).
+* **Weekly Video Updates:** [Research Progress Videos (Google Drive Folder)](https://drive.google.com/drive/folders/10CnVBjdP3e29JFJIHTLEWQyQy-BqzOwr?usp=drive_link).
 
 ---
 
@@ -37,19 +38,24 @@ This research directly operationalizes key competency areas of my Master of Scie
 
 ## 3. Timeline: October Work vs. Prior Work
 
-To ensure complete academic and administrative honesty, the work is chronologically partitioned as follows:
+To ensure complete academic and administrative transparency, fellowship work is chronologically partitioned as follows:
 
-* **Work Predating October 1, 2026:**
-  * Initial exploratory onboarding of the testbed repository (`HandsOnLLM/Hands-On-Large-Language-Models`).
-  * Prototyping basic interactive Jupyter REPL concepts and preliminary grep heuristics.
+* **Work Predating October 1, 2026 (September 4 – September 30, 2026):**
+  * Finalized initial volunteer agreement onboarding (effective September 4, signed September 9).
+  * Explored open-weights foundation models (Gemma family) and literature on Reinforcement Learning with Verifiable Rewards (RLVR).
+  * Installed and configured arkenOS runtime environment on local Apple Silicon hardware (DMGs v0.3.1 and v0.3.2).
+  * Acquired *Chemistry: Atoms First* (1,345 pages) and tested local-to-global PDF retrieval strategies (Strategies 1–4), concept graphs, and scoped GPU cluster requirements.
+  * Cloned and onboarded the testbed repository ([`HandsOnLLM/Hands-On-Large-Language-Models`](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models)).
+  * Prototyped basic interactive Jupyter REPL concepts and preliminary grep heuristics.
 * **Work Completed During Requested Renewal Period (October 1–12, 2026):**
   * Formalized the three-tier `memory-bin/` architecture ([`memory-bin/README.md`](memory-bin/README.md)).
   * Materialized the four persistent search indexes ([`heading_structure_index.json`](memory-bin/indexes/heading_structure_index.json), [`regex_alias_index.json`](memory-bin/indexes/regex_alias_index.json), [`pragmatic_task_index.json`](memory-bin/indexes/pragmatic_task_index.json), [`lexical_vector_index.json`](memory-bin/indexes/lexical_vector_index.json)).
   * Implemented `MemoryBinIndexManager` with false-positive protection (confidence $\ge 0.60$).
   * Built the decoupled `BenchmarkEvaluator` with strict post-search token verification.
   * Conducted the ground-truth repository code audit and authored [`benchmark_questions_v2_verified.json`](memory-bin/experiments/benchmark_questions_v2_verified.json).
-  * Built generic local cell-block expansion with pip-install boilerplate filtering and code-over-heading anchor ranking.
-  * Executed the paired A/B benchmarks across three iterative pilots (Pilot 1, Pilot 2, Pilot 3).
+  * Built local cell-block expansion with pip-install boilerplate filtering and code-over-heading anchor ranking (`score_candidate_anchor`).
+  * Executed paired A/B benchmarks across three iterative pilots (Pilot 1, Pilot 2, Pilot 3).
+  * Reconstructed complete retrospective evidence records in [`fellowship-evidence/`](fellowship-evidence/).
 
 ---
 
@@ -80,7 +86,7 @@ The verified 4-question paired A/B benchmark yielded the following exact numbers
 * **Evidence Correctness:** MEMORY ON: **1 / 4 (25%)** | MEMORY OFF: **0 / 4 (0%)**
 * **Failed Searches:** MEMORY ON: **1** | MEMORY OFF: **2** (on this 4-question run)
 * **Global Searches:** MEMORY ON: **5** | MEMORY OFF: **6**
-* **False-Positive Routing:** **0** (router correctly rejected negative controls `q3` and `q4`).
+* **False-Positive Routing on Negative Controls:** **0** (zero false-positive index activations were observed on the two negative-control questions `q3` and `q4`).
 
 *Objective Finding:* Persistent structural indexing eliminates conversational query mismatches on indexed topics, while conservative thresholding prevents false-positive degradation on negative controls. It does not establish general autonomous learning.
 
@@ -88,9 +94,9 @@ The verified 4-question paired A/B benchmark yielded the following exact numbers
 
 ## 6. Next Deliverable & Milestone Schedule
 
-* **Next Research Deliverable:** Adaptive Heading-to-Heading Cell-Block Expansion & Scaled 15-Question Multi-Chapter Benchmark
+* **Next Research Deliverable:** Proposed Adaptive Heading-to-Heading Cell-Block Expansion & Scaled 15-Question Multi-Chapter Benchmark
 * **Target Delivery Date:** **October 31, 2026**
 * **Specific Tasks for Remainder of October:**
-  1. Replace fixed $\pm 3$ cell expansion with dynamic heading-bounded expansion (expanding forward until the next `##` heading or max 10 cells) to resolve long-range cell spans like `q1`.
-  2. Author and freeze a 15-question verified benchmark suite across all 12 chapters of the repository.
-  3. Execute full statistical paired A/B evaluations and produce a final fellowship research paper draft.
+  1. **Dynamic Heading-Bounded Expansion (Proposed):** Replace fixed $\pm 3$ cell expansion with dynamic heading-bounded expansion (expanding forward until the next `##` heading or max 10 cells) to resolve long-range cell spans like `q1`.
+  2. **Benchmark Scaling:** Author and freeze a 15-question verified benchmark suite across all 12 chapters of the repository.
+  3. **Statistical Evaluation:** Execute full statistical paired A/B evaluations and produce a final fellowship research paper draft.
